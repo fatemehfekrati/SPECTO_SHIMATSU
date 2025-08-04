@@ -21,7 +21,3 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./
           server-dir: /home/partotey/public_html/
-          protocol: ftp
-          port: 21
-          passive: true
-          verbose: true
