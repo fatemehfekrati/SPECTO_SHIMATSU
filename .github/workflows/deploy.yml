@@ -3,7 +3,7 @@ name: FTP Deploy
 on:
   push:
     branches:
-      - main  
+      - main
 
 jobs:
   ftp-deploy:
@@ -24,9 +24,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp
           port: 21
-          security: false   
-          local-dir: ./     
-          server-dir: /     
-
-      - name: List files in local-dir
-        run: ls -la ./ 
+          security: "none"
+          local-dir: ./
+          server-dir: /
