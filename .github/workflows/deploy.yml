@@ -3,7 +3,7 @@ name: FTP Deploy
 on:
   push:
     branches:
-      - main 
+      - main
 
 jobs:
   ftp-deploy:
@@ -19,6 +19,5 @@ jobs:
           server: ftp://195.201.78.211
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftp
           port: 21
-          security: false
+          security: loose  
