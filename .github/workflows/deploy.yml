@@ -3,22 +3,22 @@ name: FTP Deploy
 on:
   push:
     branches:
-      - main
+      - main 
 
 jobs:
   ftp-deploy:
+    name: Upload to FTP
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4  
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: cp158.netafraz.com
+          server: ftp://195.201.78.211
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp
           port: 21
-          protocol: ftps
-          local-dir: ./
-          server-dir: /public_html/
+          security: false
