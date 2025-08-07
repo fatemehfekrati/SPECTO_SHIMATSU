@@ -16,8 +16,11 @@ jobs:
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ftp://195.201.78.211
+          server: 195.201.78.211       
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
-          security: loose  
+          security: loose              
+          protocol: ftp
+          local-dir: ./               
+          server-dir: /public_html/
