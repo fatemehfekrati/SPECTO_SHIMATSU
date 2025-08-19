@@ -9,3 +9,17 @@ fetch('header.html')
   .catch(error => {
     console.error('خطا:', error);
   });
+
+
+
+  fetch('menuHedear.html')
+  .then(response => {
+    if (!response.ok) throw new Error('مشکل در بارگذاری هدر');
+    return response.text();
+  })
+  .then(html => {
+    document.getElementById('menuHedear').innerHTML = html;
+  })
+  .catch(error => {
+    console.error('خطا:', error);
+  });
