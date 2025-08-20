@@ -13,7 +13,7 @@
                             <div class="mainmenu">
                                 <nav>
                                     <ul>
-                                        <li><a href='index.html'>Home</a></li>
+                                        <li ><a href='index.html' >Home</a></li>
 
                                         <li><a href="products.html">Products</a>
                                             <ul class="vmegamenu">
@@ -78,44 +78,16 @@
         </div>
 
     </div>
-<script>
-  // همه لینک‌های منوهای دسکتاپ و موبایل
-  const menuItems = document.querySelectorAll('.mainmenu nav ul li a, #main-nav ul li a');
-
-  // آدرس فعلی صفحه
-  const currentPath = window.location.pathname.split("/").pop();
-
-  menuItems.forEach(item => {
-    const itemPath = item.getAttribute("href");
-
-    // مقایسه مسیر لینک با مسیر فعلی
-    if (itemPath === currentPath) {
-      item.parentElement.classList.add("active");
-    } else {
-      item.parentElement.classList.remove("active");
-    }
-  });
-</script>
-
-
-
-
 <style>
-  /* فقط آیتم‌های سطح اول منوی دسکتاپ */
-.mainmenu nav > ul > li.active > a {
-  border-bottom: 2px solid #fff;
-  color: #fff;
-  padding-bottom: 5px;
+.as{
+   border-bottom: 2px solid rgb(255, 255, 255);
+    width:100px;
+     height:100px;
 }
 
-/* فقط آیتم‌های سطح اول منوی موبایل */
-#main-nav > ul > li.active > a,
-#main-nav .second-nav > li.active > a {
-  border-bottom: 2px solid #fff;
-  color: #fff;
-  padding-bottom: 5px;
-}
+</style>
 
-  </style>
+
+
 </header>
 
