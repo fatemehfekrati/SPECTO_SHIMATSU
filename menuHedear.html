@@ -16,49 +16,34 @@
           <div class="mainmenu-left visible-lg visible-md">
             <div class="mainmenu">
               <nav>
-                <ul
-                  style="
+                <ul style="
                     display: flex;
                     gap: 20px;
                     list-style: none;
                     margin: 0;
                     padding: 0;
-                  "
-                >
+                  ">
                   <li><a href="index.html" style="color: #ff6b00">Home</a></li>
                   <li>
                     <a href="products.html" style="color: #ff6b00">Products</a>
                     <ul class="vmegamenu">
                       <li>
-                        <a
-                          href="Handheld_LIBS.html"
-                          >Handheld LIBS</a
-                        >
+                        <a href="Handheld_LIBS.html">Handheld LIBS</a>
                       </li>
                       <li>
-                        <a
-                          href="Online_LIBS_Analyzer.html"
-                          >Online LIBS Analyzer</a
-                        >
+                        <a href="Online_LIBS_Analyzer.html">Online LIBS Analyzer</a>
                       </li>
                       <li>
-                        <a href="In_Situ_LIBS_Scanner.html"
-                          >In Situ LIBS Scanner</a
-                        >
+                        <a href="In_Situ_LIBS_Scanner.html">In Situ LIBS Scanner</a>
                       </li>
                       <li>
-                        <a
-                          href="Desktop_LIBS_Analyzer.html"
-                          >Desktop LIBS Analyzer</a
-                        >
+                        <a href="Desktop_LIBS_Analyzer.html">Desktop LIBS Analyzer</a>
                       </li>
                     </ul>
                   </li>
 
                   <li>
-                    <a href="application_nc2.html" style="color: #ff6b00"
-                      >Application</a
-                    >
+                    <a href="application_nc2.html" style="color: #ff6b00">Application</a>
                     <ul class="vmegamenu">
                       <li><a href="metal_n16.html">Metal</a></li>
                       <li><a href="mining_n20.html">Mining</a></li>
@@ -69,26 +54,18 @@
                     </ul>
                   </li>
                   <li>
-                    <a href="solutions_nc3.html" style="color: #ff6b00"
-                      >Solutions</a
-                    >
+                    <a href="solutions_nc3.html" style="color: #ff6b00">Solutions</a>
                     <ul class="vmegamenu">
                       <li>
-                        <a href="metals-low-alloy-steels_n3.html"
-                          >Alloy Steels</a
-                        >
+                        <a href="metals-low-alloy-steels_n3.html">Alloy Steels</a>
                       </li>
                       <li>
-                        <a href="Coal"
-                          >Coal</a
-                        >
+                        <a href="Coal">Coal</a>
                       </li>
                     </ul>
                   </li>
                   <li>
-                    <a href="contact-us_d2.html" style="color: #ff6b00"
-                      >Contact us</a
-                    >
+                    <a href="contact-us_d2.html" style="color: #ff6b00">Contact us</a>
                   </li>
                 </ul>
               </nav>
@@ -101,11 +78,17 @@
 
   <style>
     /* هدر اصلی */
-    header.large > div {
+    header.large>div {
       display: flex;
       align-items: center;
-      justify-content: space-between; /* فاصله بین لوگو و منو */
+      justify-content: space-between;
       padding: 0 20px;
+    }
+
+    #menuHedear {
+      position: sticky;
+      top: 0;
+      z-index: 100;
       background: linear-gradient(90deg, #0d1b2a 0%, #0d1b2a 90%, #1c1c1c 100%);
     }
 
@@ -144,7 +127,7 @@
 
     /* ریسپانسیو - تبلت و موبایل */
     @media (max-width: 992px) {
-      header.large > div {
+      header.large>div {
         flex-direction: column;
         align-items: flex-start;
         padding: 10px 20px;
