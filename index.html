@@ -56,49 +56,73 @@
       ></iframe
     ></noscript>
 
-    <script src="main.js"></script>
-
     <div id="menuHedear"></div>
-
-    <div class="slide_content" style="height: 900px; background-color: #ffffff">
-      <div class="slide-text slide_style_center clearfix">
-        <div class="container">
-          <div class="slide-text-m">
-            <div data-animation="animated fadeInUp" class="title">
-              Materials Analysis Division
-            </div>
-            <div class="text wow fadeInUp">
-              We make analytical instruments and services that make the
-              invisible accessible, so you can make the impossible come true.
-            </div>
-            <span class=""><a href="javascript:void(0);"></a></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="htmleaf-container">
-        <div
-          id="bootstrap-touch-slider"
-          class="carousel bs-slider fade control-round indicators-line"
-          data-ride="carousel"
-          data-pause="hover"
-          data-interval="2000"
-        >
-          <div class="carousel-inner" role="">
-            <div class="item active">
-              <a href="javascript:void(0);">
-                <img
-                  src="uploadfile/userimg/shutterstock.jpg"
-                  alt="Materials Analysis Division"
-                  class=""
-                  style="height: 900px"
-                />
-              </a>
-            </div>
-          </div>
-        </div>
+    <div class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Materials Analysis Division</h1>
+        <p>
+          We make analytical instruments and services that make the invisible
+          accessible, so you can make the impossible come true.
+        </p>
+        <a href="#" class="cta-button">Learn More</a>
       </div>
     </div>
+    <style>
+      .hero-section {
+        position: relative;
+        height: 900px;
+        background-color: #ffffff;
+        background-image: url("images/new/balancede30.jpg");
+
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        background-size: cover; /* تصویر کل بخش رو پر می‌کنه */
+        background-position: center center;
+      }
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+
+        background: radial-gradient(
+          circle at top left,
+          rgb(0, 0, 0),
+          rgba(0, 0, 0, 0) 50%
+        );
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+      }
+
+      .cta-button {
+        padding: 10px 20px;
+        background-color: #f1c40f;
+        color: black;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+    </style>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
@@ -106,541 +130,12 @@
       rel="stylesheet"
     />
 
-    <style>
-      :root {
-        --accent: #ff6b00;
-        --text: #2f3b45;
-        --muted: #6c7a89;
-        --line: #eaeff3;
-        --radius: 12px;
-        --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-      }
+    <div id="Pro_Landing"></div>
 
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        font-family: Inter, system-ui, Arial;
-        color: var(--text);
-        background: #fff;
-      }
-
-      .container {
-        max-width: 1160px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      .section {
-        padding: 56px 0;
-      }
-
-      .title {
-        font-weight: 700;
-        font-size: 28px;
-        text-align: center;
-        margin: 0 0 10px;
-      }
-
-      .subtitle {
-        color: var(--muted);
-        text-align: center;
-        margin: 0 0 24px;
-      }
-
-      /* Header */
-      .header {
-        border-bottom: 1px solid var(--line);
-        position: sticky;
-        top: 0;
-        background: #fff;
-        z-index: 10;
-      }
-
-      .header__row {
-        display: flex;
-        justify-content: center;
-        gap: 32px;
-        padding: 14px 0;
-      }
-
-      .nav a {
-        color: var(--text);
-        text-decoration: none;
-        padding: 8px 10px;
-        border-radius: 8px;
-      }
-
-      .nav a:hover {
-        background: #fafafa;
-      }
-
-      .cta {
-        background: var(--accent);
-        color: #fff;
-        border: 0;
-        border-radius: 10px;
-        padding: 10px 16px;
-        font-weight: 600;
-        box-shadow: var(--shadow);
-      }
-
-      /* Products (Centered grid) */
-      .grid3 {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
-      }
-
-      .card {
-        background: #fff;
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        padding: 18px;
-        text-align: center;
-        box-shadow: var(--shadow);
-      }
-
-      .thumb {
-        height: 180px;
-        background: #e6e9ef;
-        border-radius: 10px;
-        margin-bottom: 12px;
-      }
-
-      .price {
-        color: var(--accent);
-        font-weight: 700;
-        margin: 8px 0;
-      }
-
-      .btn {
-        display: inline-block;
-        background: var(--accent);
-        color: #fff;
-        border: 0;
-        border-radius: 10px;
-        padding: 10px 16px;
-        font-weight: 600;
-        text-decoration: none;
-      }
-
-      .btn--ghost {
-        background: #fff;
-        color: var(--text);
-        border: 1px solid var(--line);
-      }
-
-      /* Applications (Centered, متفاوت از محصولات) */
-      .apps {
-        background: #fafafc;
-        border-top: 1px solid var(--line);
-        border-bottom: 1px solid var(--line);
-      }
-
-      .apps__wrap {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 28px;
-        align-items: center;
-      }
-
-      .apps__media {
-        border-radius: var(--radius);
-        overflow: hidden;
-        box-shadow: var(--shadow);
-      }
-
-      .apps__media img {
-        display: block;
-        width: 100%;
-        height: 260px;
-        object-fit: cover;
-      }
-
-      .apps__panel {
-        text-align: center;
-      }
-
-      .apps__list {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-        margin-top: 12px;
-      }
-
-      .apps__item {
-        background: #fff;
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        padding: 14px;
-      }
-
-      .apps__item b {
-        display: block;
-        margin-bottom: 6px;
-      }
-
-      .apps__actions {
-        margin-top: 14px;
-        display: flex;
-        gap: 10px;
-        justify-content: center;
-      }
-
-      /* Footer */
-      .footer {
-        border-top: 1px solid var(--line);
-        padding: 28px 0;
-        text-align: center;
-        color: var(--muted);
-      }
-
-      @media (max-width: 900px) {
-        .grid3 {
-          grid-template-columns: 1fr;
-          gap: 16px;
-        }
-
-        .apps__wrap {
-          grid-template-columns: 1fr;
-        }
-
-        .apps__list {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-    </style>
-
-    <!-- Products (centered grid) -->
-    <section id="products" class="section">
-      <div class="container">
-        <h2 class="title" style="color: var(--accent)">Products</h2>
-        <p class="subtitle">
-          Choose the right machine for your materials and thickness
-        </p>
-
-        <div class="grid3">
-          <article class="card">
-            <div style="margin-bottom: 30px;">
-               <img style="height: 300px; width: 300px;" src="uploadfile/bannerimg/onlinelibs.jpeg" alt="">
-            </div>
-            <h3>Online LIBS Analyzer</h3>
-            <p>2 kW Fiber • 1300×900 mm</p>
-            <p class="price">¥3,480,000 (tax incl.)</p>
-            <div style="display: flex; gap: 8px; justify-content: center">
-              <a class="btn" href="#">Details</a>
-              <a class="btn btn--ghost" href="#">Request Quote</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div style="margin-bottom: 30px;">
-                <img style="height: 300px; width: 300px;" src="uploadfile/bannerimg/1-s2.0-S0584854721003049-ga1.jpg" alt="">
-            </div>
-            <h3>In Situ LIBS Scanner</h3>
-            <p>4 kW Fiber • 1500×3000 mm</p>
-            <p class="price">¥7,980,000 (tax incl.)</p>
-            <div style="display: flex; gap: 8px; justify-content: center">
-              <a class="btn" href="#">Details</a>
-              <a class="btn btn--ghost" href="#">Request Quote</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div style="margin-bottom: 30px;">
-                          <img style="height: 300px; width: 300px;" src="uploadfile/bannerimg/IMG_20240831_002051.jpg" alt="">
-            </div>
-            <h3>Desktop LIBS Analyzer</h3>
-            <p>Desktop LIBS Analyzer</p>
-            <p class="price">¥1,680,000 (tax incl.)</p>
-            <div style="display: flex; gap: 8px; justify-content: center">
-              <a class="btn" href="#">Details</a>
-              <a class="btn btn--ghost" href="#">Request Quote</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="applications" class="apps">
-      <div class="apps__container">
-        <!-- Title + subtitle -->
-        <div class="apps__intro">
-          <h2>Laser Applications</h2>
-          <p>Popular materials and industries where laser systems shine.</p>
-        </div>
-
-        <div class="apps__grid">
-          <!-- LEFT: featured application -->
-          <div class="apps__feature">
-            <div class="apps__media">
-              <img id="apps-hero" />
-            </div>
-            <div class="apps__content">
-              <h3 id="apps-title">Serializing &amp; Barcoding</h3>
-              <p id="apps-desc">
-                Efficient laser part marking for traceability and product
-                identification on industrial components and products. Our
-                high-performance lasers produce extremely fine, permanent marks
-                quickly and easily.
-              </p>
-              <a id="apps-cta" href="#" class="btn btn--primary">Learn More</a>
-            </div>
-          </div>
-
-          <!-- RIGHT: sidebar list -->
-          <aside class="apps__sidebar">
-            <a
-              href="/application_nc2.html"
-              class="btn btn--outline apps__seeall"
-              >See All Applications</a
-            >
-
-            <nav class="apps__nav" id="apps-nav">
-              <a
-                href="#"
-                class="apps__nav-item is-active"
-                data-title="Metals"
-                data-desc="Specto Shimatsu offers a full range of solutions for the entire metals industry by its metal analyzer..."
-                data-img="./images/new/IMG_8524.JPG"
-                data-link="./metals.html"
-              >
-                Metals
-              </a>
-
-              <a
-                href="#"
-                class="apps__nav-item"
-                data-title="Mining"
-                data-desc="Spectoshimatsu online scanners and portable analyzers are adaptable candidate systems to fulfill..."
-                data-img="./images/new/IMG_8524.JPG"
-                data-link="./mining_n20.html"
-                >Mining
-              </a>
-
-              <a
-                href="#"
-                class="apps__nav-item"
-                data-title="Environmental"
-                data-desc="Environmental applications of Specto Shimatsu LIBS analyzers include direct inspection of ..."
-                data-img="./images/new/IMG_8524.JPG"
-                data-link="./Environmental.html"
-                >Environmental
-              </a>
-
-              <a
-                href="#"
-                class="apps__nav-item"
-                data-title="Industry"
-                data-desc="There are multiple industry challenges that could be addressed by Specto Shimatsu..."
-                data-img="https://via.placeholder.com/640x360?text=Wood+Engraving+%26+Cutting"
-                data-link="./Industry.html"
-              >
-                Industry</a
-              >
-
-              <a
-                href="#"
-                class="apps__nav-item"
-                data-title="Biomedical"
-                data-desc="The widespread and growing applications of LIBS in biomedical fields are..."
-                data-img="https://via.placeholder.com/640x360?text=Awards+%26+Recognition"
-                data-link="./Biomedical.html"
-                >Biomedical
-              </a>
-            </nav>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <style>
-      :root {
-        --accent: #ff6b00;
-        /* آبی شبیه Epilog */
-        --text: #2f3b45;
-        --muted: #6c7a89;
-        --border: #e6ebf1;
-        --shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-      }
-
-      .apps {
-        padding: 56px 16px;
-        background: #fff;
-      }
-
-      .apps__container {
-        max-width: 1160px;
-        margin: 0 auto;
-      }
-
-      .apps__intro h2 {
-        font: 600 28px/1.2 system-ui, Segoe UI, Roboto, Helvetica, Arial;
-      }
-
-      .apps__intro p {
-        margin-top: 8px;
-        color: var(--muted);
-        border-top: 1px solid var(--border);
-        padding-top: 12px;
-      }
-
-      .apps__grid {
-        margin-top: 22px;
-        display: grid;
-        grid-template-columns: 2.2fr 1fr;
-        gap: 28px;
-        align-items: start;
-      }
-
-      .apps__feature {
-        display: grid;
-        grid-template-columns: 380px 1fr;
-        gap: 24px;
-        align-items: start;
-        border-top: 1px solid var(--border);
-        padding-top: 22px;
-      }
-
-      .apps__media img {
-        width: 100%;
-        height: 230px;
-        object-fit: cover;
-        border-radius: 6px;
-        box-shadow: var(--shadow);
-      }
-
-      .apps__content h3 {
-        font: 500 26px/1.3 system-ui, Segoe UI, Roboto, Helvetica, Arial;
-        color: #4f5f6f;
-        margin: 4px 0 8px;
-      }
-
-      .apps__content p {
-        color: var(--muted);
-        line-height: 1.7;
-        margin-bottom: 14px;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        padding: 11px 18px;
-        border-radius: 6px;
-        text-decoration: none;
-        border: 0;
-        cursor: pointer;
-        font-weight: 600;
-      }
-
-      .btn--primary {
-        background: var(--accent);
-        color: #fff;
-        box-shadow: var(--shadow);
-      }
-
-      .btn--primary:hover {
-        filter: brightness(0.95);
-      }
-
-      .btn--outline {
-        background: #fff;
-        border: 1px solid #cfd7e3;
-        color: #254d73;
-        box-shadow: var(--shadow);
-      }
-
-      .apps__sidebar {
-        position: relative;
-      }
-
-      .apps__seeall {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 18px;
-      }
-
-      .apps__nav {
-        border-left: 3px solid #e9edf3;
-        padding-left: 14px;
-        display: grid;
-        gap: 10px;
-      }
-
-      .apps__nav-item {
-        color: #2a5e89;
-        text-decoration: none;
-        padding: 6px 0 6px 8px;
-        border-left: 3px solid transparent;
-        transition: 0.2s;
-      }
-
-      .apps__nav-item:hover {
-        color: var(--accent);
-      }
-
-      .apps__nav-item.is-active {
-        border-left-color: var(--accent);
-        color: var(--accent);
-        font-weight: 700;
-      }
-
-      @media (max-width: 1024px) {
-        .apps__grid {
-          grid-template-columns: 1fr;
-        }
-
-        .apps__feature {
-          grid-template-columns: 1fr;
-        }
-
-        .apps__media img {
-          height: 220px;
-        }
-      }
-    </style>
-
-    <script>
-      // Optional: تغییر محتوای سمت چپ با کلیک روی آیتم‌ها (بدون رفرش صفحه)
-      const nav = document.getElementById("apps-nav");
-      const img = document.getElementById("apps-hero");
-      const title = document.getElementById("apps-title");
-      const desc = document.getElementById("apps-desc");
-      const cta = document.getElementById("apps-cta");
-
-      nav?.addEventListener("click", (e) => {
-        const a = e.target.closest(".apps__nav-item");
-        if (!a) return;
-        e.preventDefault();
-        nav
-          .querySelectorAll(".apps__nav-item")
-          .forEach((el) => el.classList.remove("is-active"));
-        a.classList.add("is-active");
-        img.src = a.dataset.img;
-        title.innerHTML = a.dataset.title;
-        desc.innerHTML = a.dataset.desc;
-        cta.href = a.dataset.link || "#";
-      });
-
-      window.addEventListener("DOMContentLoaded", () => {
-        const activeItem = document.querySelector(".apps__nav-item.is-active");
-        if (activeItem) {
-          document.getElementById("apps-hero").src = activeItem.dataset.img;
-          document.getElementById("apps-title").textContent =
-            activeItem.dataset.title;
-          document.getElementById("apps-desc").textContent =
-            activeItem.dataset.desc;
-          document.getElementById("apps-cta").href = activeItem.dataset.link;
-        }
-      });
-    </script>
+    <div id="App_Landing"></div>
 
     <div id="Footer_Main"></div>
+    <script src="main.js"></script>
 
     <a href="javascript:;" rel="nofollow" class="back_top"></a>
 

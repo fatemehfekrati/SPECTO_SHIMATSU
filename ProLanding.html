@@ -1,0 +1,306 @@
+<style>
+  :root {
+    --accent: #ff6b00;
+    --text: #2f3b45;
+    --muted: #6c7a89;
+    --line: #eaeff3;
+    --radius: 12px;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: Inter, system-ui, Arial;
+    color: var(--text);
+    background: #fff;
+  }
+
+  .container {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .section {
+    padding: 56px 0;
+  }
+
+  .title {
+    font-weight: 700;
+    font-size: 28px;
+    text-align: center;
+    margin: 0 0 10px;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    text-align: center;
+    margin: 0 0 24px;
+  }
+
+  /* Header */
+  .header {
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 10;
+  }
+
+  .header__row {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    padding: 14px 0;
+  }
+
+  .nav a {
+    color: var(--text);
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 8px;
+  }
+
+  .nav a:hover {
+    background: #fafafa;
+  }
+
+  .cta {
+    background: var(--accent);
+    color: #fff;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-weight: 600;
+    box-shadow: var(--shadow);
+  }
+
+  /* Products (Centered grid) */
+  .grid3 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 18px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .thumb {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  .thumb img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+  .price {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  .card h3 {
+    font-size: 18px;
+    margin: 0 0 8px;
+  }
+
+  .card p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .btn--ghost {
+    background: #fff;
+    color: var(--text);
+    border: 1px solid var(--line);
+  }
+
+  /* Applications (Centered, متفاوت از محصولات) */
+  .apps {
+    background: #fafafc;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .apps__wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-items: center;
+  }
+
+  .apps__media {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .apps__media img {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+  }
+
+  .apps__panel {
+    text-align: center;
+  }
+
+  .apps__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .apps__item {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 14px;
+  }
+
+  .apps__item b {
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .card-actions {
+    margin-top: auto;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+  }
+  .apps__actions {
+    margin-top: 14px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  /* Footer */
+  .footer {
+    border-top: 1px solid var(--line);
+    padding: 28px 0;
+    text-align: center;
+    color: var(--muted);
+  }
+
+  @media (max-width: 900px) {
+    .grid3 {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .apps__wrap {
+      grid-template-columns: 1fr;
+    }
+
+    .apps__list {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
+
+<section id="products" class="section">
+  <div class="container">
+    <h2 class="title" style="color: var(--accent)">Products</h2>
+    <p class="subtitle">
+      Choose the right machine for your materials and thickness
+    </p>
+
+    <div class="grid3">
+      <article class="card">
+        <div class="thumb">
+          <img
+            src="uploadfile/bannerimg/-1390403837_-1150823453.jpg"
+            alt="Handheld LIBS"
+          />
+        </div>
+        <h3>Handheld LIBS</h3>
+        <p>2 kW Fiber • 1300×900 mm</p>
+      
+        <div class="card-actions">
+          <a class="btn" href="Handheld_LIBS.html">Details</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb">
+          <img
+            src="uploadfile/bannerimg/onlinelibs.jpeg"
+            alt="Online LIBS Analyzer"
+          />
+        </div>
+        <h3>Online LIBS Analyzer</h3>
+        <p>2 kW Fiber • 1300×900 mm</p>
+       
+        <div class="card-actions">
+          <a class="btn" href="Online_LIBS_Analyzer.html">Details</a>
+          
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb">
+          <img
+            src="uploadfile/bannerimg/1-s2.0-S0584854721003049-ga1.jpg"
+            alt="In Situ LIBS Scanner"
+          />
+        </div>
+        <h3>In Situ LIBS Scanner</h3>
+        <p>4 kW Fiber • 1500×3000 mm</p>
+       
+        <div class="card-actions">
+          <a class="btn" href="In_Situ_LIBS_Scanner.html">Details</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb">
+          <img
+            src="uploadfile/bannerimg/IMG_20240831_002051.jpg"
+            alt="Desktop LIBS Analyzer"
+          />
+        </div>
+        <h3>Desktop LIBS Analyzer</h3>
+        <p>Compact desktop system</p>
+    
+        <div class="card-actions">
+          <a class="btn" href="Desktop_LIBS_Analyzer.html">Details</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
