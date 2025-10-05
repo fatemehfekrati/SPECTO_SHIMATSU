@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="template/css/style.css">
 
   <style>
-    .cbp-title{color:#000; transition:color .2s ease;}
+    .cbp-title{color:#000; transition:color .2s ease; }
     .cbp-title:hover{color:#FF6B00;}
     #cbp-vm ul{list-style:none; padding:0; margin:0;}
     #cbp-vm li{margin-bottom:24px;}
@@ -24,18 +24,67 @@
     .left-adv{background-size:cover; background-position:center; border-radius:8px; overflow:hidden; padding:24px; color:#fff; position:relative;}
     .left-adv .ovrly{position:absolute; inset:0; background:rgba(0,0,0,.35);}
     .left-adv .main{position:relative; z-index:1;}
+
+    @media (max-width: 768px) {
+
+  .post_blog_tag {
+    display: flex;
+    flex-direction: column;
+   
+  }
+  
+}
+    @media (max-width: 425px) {
+ 
+
+  
+    .dd{
+    
+      background-color: red;
+      display: flex;
+      flex-direction: column;
+      width:400px ;
+    }
+}
+
+
+
+
   </style>
 </head>
 <body>
  <script src="main.js"></script>
   <!-- Header include/placeholder -->
   <div id="menuHedear"></div>
-
+  <div class="breadcrumb clearfix">
+    <div class="container">
+      <div class="breadcrumbm">
+        <div class="breadcrumb_left">
+          <div class="main_title"><em>Products</em></div>
+          <div class="bread_right">
+            <a class="home" href="index.html" style="color:#FF6B00;"><i class="fa fa-home" style="color:#FF6B00;"></i>Home</a>
+            <i>/</i><a href="products.html"><h2>Products</h2></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="page_section clearfix page_gary">
     <div class="container">
       <div class="page_column clearfix">
 
-        <div class="page-left clearfix">
+      
+
+        <div style="display: flex;" class=" clearfix" >
+          <div class="main">
+            <div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-grid">
+              <ul id="products-list" class="clearfix"></ul>
+            </div>
+          </div>
+        </div>
+
+
+          <!-- <div class="page-left clearfix">
           <div class="left-adv clearfix hidden-xs" style="background-image:url('uploadfile/bannerimg/analyzeyourworld.jpg');">
             <div class="ovrly"></div>
             <div class="main">
@@ -44,17 +93,8 @@
               <a rel="nofollow" href="contact-us_d2.html" class="main_more1" style="background-color:#ff6b00">Contact Us</a>
             </div>
           </div>
-           <div id="New_Products_Pic"></div>
-        </div>
-
-        <div class="page-right clearfix">
-          <div class="main">
-            <div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-grid">
-              <ul id="products-list" class="clearfix"></ul>
-            </div>
-          </div>
-        </div>
-
+       
+        </div> -->
       </div>
     </div>
   </div>
@@ -85,7 +125,7 @@
       {
         href: "Online_LIBS_Analyzer.html",
         title: "Online LIBS Analyzer",
-        img: "uploadfile/bannerimg/onlinelibs.jpeg",
+        img: "images/new/onlinelibs.jpeg",
         imgStyle: "height:206px; object-fit:cover; width:100%;",
         desc: "Radiation-free elemental composition analytics for real-time process control optimization in mining and mineral processing.",
         tags: [
@@ -112,7 +152,7 @@
       {
         href: "Desktop_LIBS_Analyzer.html",
         title: "Desktop LIBS Analyzer",
-        img: "uploadfile/bannerimg/IMG_20240831_002051.jpg",
+        img: "images/new/Desktop_LIBS_Analyzer.jpg",
         desc: "Complete solution for optical particle analysis and technical cleanliness. Automatic filter analysis, fast live analytics, full system integration, intuitive software.",
         tags: [
           {label:"spark spectrometer", href:"spark-spectrometer_sp.html"},
@@ -133,8 +173,8 @@
 
     function productCard(p){
       return ''+
-      '<li>'+
-        '<div class="clearfix">'+
+      '<li class="dd">'+
+        '<div class="clearfix dd">'+
           '<div class="cbp-vm-image">'+
             '<a class="link" href="'+p.href+'">'+
               '<img alt="'+p.title+'" src="'+p.img+'" '+(p.imgStyle?'style="'+p.imgStyle+'"':'')+' />'+

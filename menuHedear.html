@@ -1,12 +1,20 @@
-<header class="large">
+<header class="large" id="menuHeader">
   <div>
-    <!-- لوگو -->
-    <div id="logo" class="clearfix">
-      <h1 style="margin: 0">
-        <a class="top_logo" href="index.html" title="Contact us">
-          <img alt="Contact us" src="uploadfile/userimg/New.png" />
-        </a>
-      </h1>
+    <div
+      class="wi"
+      style="align-items: center; display: flex; justify-content: space-between"
+    >
+      <!-- لوگو -->
+      <div id="logo" class="clearfix">
+        <h1 style="margin: 0">
+          <a class="top_logo" href="index.html" title="Contact us">
+            <img alt="Contact us" src="uploadfile/userimg/New.png" />
+          </a>
+        </h1>
+      </div>
+
+      <!-- Hamburger Icon -->
+      <div class="hamburger">☰</div>
     </div>
 
     <!-- منو -->
@@ -16,34 +24,31 @@
           <div class="mainmenu-left visible-lg visible-md">
             <div class="mainmenu">
               <nav>
-                <ul style="
-                    display: flex;
-                    gap: 20px;
-                    list-style: none;
-                    margin: 0;
-                    padding: 0;
-                  ">
-                  <li><a href="index.html" style="color: #ff6b00">Home</a></li>
+                <ul>
+                  <li><a href="index.html">Home</a></li>
                   <li>
-                    <a href="products.html" style="color: #ff6b00">Products</a>
+                    <a href="products.html">Products</a>
                     <ul class="vmegamenu">
+                      <li><a href="Handheld_LIBS.html">Handheld LIBS</a></li>
                       <li>
-                        <a href="Handheld_LIBS.html">Handheld LIBS</a>
+                        <a href="Online_LIBS_Analyzer.html"
+                          >Online LIBS Analyzer</a
+                        >
                       </li>
                       <li>
-                        <a href="Online_LIBS_Analyzer.html">Online LIBS Analyzer</a>
+                        <a href="In_Situ_LIBS_Scanner.html"
+                          >In Situ LIBS Scanner</a
+                        >
                       </li>
                       <li>
-                        <a href="In_Situ_LIBS_Scanner.html">In Situ LIBS Scanner</a>
-                      </li>
-                      <li>
-                        <a href="Desktop_LIBS_Analyzer.html">Desktop LIBS Analyzer</a>
+                        <a href="Desktop_LIBS_Analyzer.html"
+                          >Desktop LIBS Analyzer</a
+                        >
                       </li>
                     </ul>
                   </li>
-
                   <li>
-                    <a href="application_nc2.html" style="color: #ff6b00">Application</a>
+                    <a href="application_nc2.html">Application</a>
                     <ul class="vmegamenu">
                       <li><a href="metals.html">Metals</a></li>
                       <li><a href="mining_n20.html">Mining</a></li>
@@ -54,19 +59,17 @@
                     </ul>
                   </li>
                   <li>
-                    <a href="solutions_nc3.html" style="color: #ff6b00">Solutions</a>
+                    <a href="solutions_nc3.html">Solutions</a>
                     <ul class="vmegamenu">
                       <li>
-                        <a href="metals-low-alloy-steels_n3.html">Alloy Steels</a>
+                        <a href="metals-low-alloy-steels_n3.html"
+                          >Alloy Steels</a
+                        >
                       </li>
-                      <li>
-                        <a href="Coal">Coal</a>
-                      </li>
+                      <li><a href="Coal">Coal</a></li>
                     </ul>
                   </li>
-                  <li>
-                    <a href="contact-us_d2.html" style="color: #ff6b00">Contact us</a>
-                  </li>
+                  <li><a href="contact-us_d2.html">Contact us</a></li>
                 </ul>
               </nav>
             </div>
@@ -77,22 +80,19 @@
   </div>
 
   <style>
-    /* هدر اصلی */
-    header.large>div {
+    /* ===== Base Styles ===== */
+    header.large > div {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 20px;
-    }
-
-    #menuHedear {
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      padding: 10px 30px;
       background: linear-gradient(90deg, #0d1b2a 0%, #0d1b2a 90%, #1c1c1c 100%);
     }
 
-    /* منو */
+    #logo img {
+      max-height: 70px;
+    }
+
     .mainmenu nav ul {
       display: flex;
       gap: 20px;
@@ -107,14 +107,14 @@
       font-weight: 500;
     }
 
-    /* ساب منو */
     .vmegamenu {
       display: none;
       position: absolute;
       background: #0d1b2a;
       padding: 10px;
       list-style: none;
-      min-width: 200px;
+      min-width: 100px;
+      z-index: 100;
     }
 
     .mainmenu nav li {
@@ -125,39 +125,137 @@
       display: block;
     }
 
-    /* ریسپانسیو - تبلت و موبایل */
-    @media (max-width: 992px) {
-      header.large>div {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 20px;
-      }
+    /* Hamburger Icon */
+    .hamburger {
+      display: none;
+      font-size: 25px;
+      color: #ff6b00;
+      cursor: pointer;
+      user-select: none;
+    }
 
-      .mainmenu nav ul {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-      }
+    /* ===== Responsive ===== */
 
-      .mainmenu nav li {
-        width: 100%;
-      }
-
-      .vmegamenu {
-        position: static;
-        background: none;
-        padding-left: 15px;
+    /* Desktop (≥1200px) */
+    @media (max-width: 1200px) {
+      header.large > div {
+        padding: 10px 25px;
       }
     }
 
-    @media (max-width: 576px) {
-      .logo img {
-        max-height: 50px;
+    /* Small Laptop (≤992px) */
+    @media (max-width: 992px) {
+      .wi {
+        width: 100%;
+      }
+      .hamburger {
+        font-size: 40px;
+      }
+      .mainmenu nav {
+        display: none;
       }
 
-      .mainmenu nav ul {
-        gap: 5px;
+      .hamburger {
+        display: block;
+      }
+
+      .mainmenu.open nav {
+        display: block;
+        background: #0d1b2a;
+        width: 100%;
+        padding: 10px 0;
+      }
+
+      .mainmenu.open nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      #logo img {
+        max-height: 150px;
+        max-width: 200px;
+      }
+    }
+
+    /* Tablet (≤768px) */
+    @media (max-width: 768px) {
+      .wi {
+        width: 100%;
+      }
+        .hamburger {
+        font-size: 30px;
+      }
+      .mainmenu nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .mainmenu.open nav {
+        display: block;
+        background: #0d1b2a;
+        width: 100%;
+        padding: 10px 0;
+      }
+
+      .mainmenu.open nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+        #logo img {
+        max-height: 150px;
+        max-width: 150px;
+      }
+    }
+
+    /* Phone (≤576px) */
+    @media (max-width: 576px) {
+      .wi {
+        width: 100%;
+      }
+        .hamburger {
+        font-size: 20px;
+      }
+      .mainmenu nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .mainmenu.open nav {
+        display: block;
+        background: #0d1b2a;
+        width: 100%;
+        padding: 10px 0;
+      }
+
+      .mainmenu.open nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+     
+        #logo img {
+        max-height: 150px;
+        max-width: 130px;
       }
     }
   </style>
+
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const menu = document.querySelector(".mainmenu");
+
+    hamburger.addEventListener("click", () => {
+      menu.classList.toggle("open");
+    });
+  </script>
 </header>
