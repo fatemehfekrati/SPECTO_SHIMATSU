@@ -1805,9 +1805,7 @@ pre code {
   .col-sm-7 {
     width: 58.33333333%;
   }
-  .col-sm-6 {
-    width: 48.8%;
-  }
+ 
   .col-sm-5 {
     width: 41.66666667%;
   }
@@ -6472,10 +6470,7 @@ button.close {
 .modal-header:before,
 .modal-header:after,
 .modal-footer:before,
-.modal-footer:after {
-  display: table;
-  content: " ";
-}
+
 .clearfix:after,
 .dl-horizontal dd:after,
 .container:after,
@@ -6491,9 +6486,7 @@ button.close {
 .pager:after,
 .panel-body:after,
 .modal-header:after,
-.modal-footer:after {
-  clear: both;
-}
+
 .center-block {
   display: block;
   margin-right: auto;

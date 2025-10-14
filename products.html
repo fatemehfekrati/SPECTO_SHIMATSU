@@ -1,207 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Products | SPECTO</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Products | SPECTO</title>
 
-  <!-- فقط CSSهای خودت؛ هر کدوم لازم نیست حذفش کن -->
-  <link rel="stylesheet" href="images/moban.css">
-  <link rel="stylesheet" href="template/css/bootstrap.css">
-  <link rel="stylesheet" href="template/css/font-awesome.min.css">
-  <link rel="stylesheet" href="template/css/style.css">
+    <!-- فقط CSSهای خودت؛ هر کدوم لازم نیست حذفش کن -->
+    <link rel="stylesheet" href="images/moban.css" />
+    <link rel="stylesheet" href="template/css/bootstrap.css" />
+    <link rel="stylesheet" href="template/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="template/css/style.css" />
+    <link type="text/css" rel="stylesheet" href="template/sidebar.css" />
 
-  <style>
-    .cbp-title{color:#000; transition:color .2s ease; }
-    .cbp-title:hover{color:#FF6B00;}
-    #cbp-vm ul{list-style:none; padding:0; margin:0;}
-    #cbp-vm li{margin-bottom:24px;}
-    .cbp-vm-image img{width:100%; height:206px; display:block; border-radius:8px;}
-    .cbp-list-center{padding:12px 0;}
-    .post_blog_tag{margin:10px 0; padding:0; list-style:none; display:flex; flex-wrap:wrap; gap:8px; align-items:center;}
-    .post_blog_tag p{margin:0 8px 0 0;}
-    .more .main_more a{color:#fff; text-decoration:none;}
-    .left-adv{background-size:cover; background-position:center; border-radius:8px; overflow:hidden; padding:24px; color:#fff; position:relative;}
-    .left-adv .ovrly{position:absolute; inset:0; background:rgba(0,0,0,.35);}
-    .left-adv .main{position:relative; z-index:1;}
+    <link type="text/css" rel="stylesheet" href="template/sidebar.css" />
 
-    @media (max-width: 768px) {
+    <style>
+      .cbp-title {
+        color: #000;
+        transition: color 0.2s ease;
+      }
+      .cbp-title:hover {
+        color: #ff6b00;
+      }
+      #cbp-vm ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      #cbp-vm li {
+        margin-bottom: 24px;
+      }
+      .cbp-vm-image img {
+        width: 100%;
+        height: 206px;
+        display: block;
+        border-radius: 8px;
+      }
+      .cbp-list-center {
+        padding: 12px 0;
+      }
+      .post_blog_tag {
+        margin: 10px 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+      }
+      .post_blog_tag p {
+        margin: 0 8px 0 0;
+      }
+      .more .main_more a {
+        color: #fff;
+        text-decoration: none;
+      }
+      .left-adv {
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px;
+        overflow: hidden;
+        padding: 24px;
+        color: #fff;
+        position: relative;
+      }
+      .left-adv .ovrly {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+      }
+      .left-adv .main {
+        position: relative;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="main.js"></script>
 
-  .post_blog_tag {
-    display: flex;
-    flex-direction: column;
-   
-  }
-  
-}
-    @media (max-width: 425px) {
- 
+    <div id="menuHedear"></div>
 
-  
-    .dd{
-    
-      background-color: red;
-      display: flex;
-      flex-direction: column;
-      width:400px ;
-    }
-}
-
-
-
-
-  </style>
-</head>
-<body>
- <script src="main.js"></script>
-  <!-- Header include/placeholder -->
-  <div id="menuHedear"></div>
-  <div class="breadcrumb clearfix">
-    <div class="container">
-      <div class="breadcrumbm">
-        <div class="breadcrumb_left">
-          <div class="main_title"><em>Products</em></div>
-          <div class="bread_right">
-            <a class="home" href="index.html" style="color:#FF6B00;"><i class="fa fa-home" style="color:#FF6B00;"></i>Home</a>
-            <i>/</i><a href="products.html"><h2>Products</h2></a>
+    <div class="breadcrumb clearfix">
+      <div class="container">
+        <div class="breadcrumbm">
+          <div class="breadcrumb_left">
+            <div class="main_title"><em>Products</em></div>
+            <div class="bread_right">
+              <a class="home" href="index.html" style="color: #ff6b00"
+                ><i class="fa fa-home" style="color: #ff6b00"></i>Home</a
+              >
+              <i>/</i><a href="products.html"><h2>Products</h2></a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="page_section clearfix page_gary">
-    <div class="container">
-      <div class="page_column clearfix">
 
-      
-
-        <div style="display: flex;" class=" clearfix" >
-          <div class="main">
-            <div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-grid">
-              <ul id="products-list" class="clearfix"></ul>
-            </div>
-          </div>
-        </div>
-
-
-          <!-- <div class="page-left clearfix">
-          <div class="left-adv clearfix hidden-xs" style="background-image:url('uploadfile/bannerimg/analyzeyourworld.jpg');">
-            <div class="ovrly"></div>
+    <div class="page_section clearfix page_gary">
+      <div class="container">
+        <div class="page_column clearfix">
+          <div style="display: flex" class="clearfix">
             <div class="main">
-              <a href="contact-us_d2.html" class="title">how can we help you</a>
-              <div class="text">You can contact us any way that is convenient for you. We are available 24/7 via email or telephone.</div>
-              <a rel="nofollow" href="contact-us_d2.html" class="main_more1" style="background-color:#ff6b00">Contact Us</a>
+              <div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-grid">
+                <ul id="products-list" class="clearfix"></ul>
+              </div>
             </div>
           </div>
-       
-        </div> -->
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Footer include/placeholder -->
-  <div id="Footer_Main"></div>
+    <div id="Footer_Main"></div>
 
-  <!-- Back to top (بدون JS فقط لینک خالیه؛ اگر لازم نیست حذفش کن) -->
-  <a href="javascript:;" rel="nofollow" class="back_top"></a>
+    <a href="javascript:;" rel="nofollow" class="back_top"></a>
 
-  <!-- فقط یک اسکریپت کوچک وانیلا برای map محصولات -->
-  <script>
-  (function(){
-    // داده‌هایت را اینجا نگه دار و فقط ویرایش کن
-    var products = [
-      {
-        href: "Handheld_LIBS.html",
-        title: "Handheld LIBS",
-        img: "uploadfile/bannerimg/-1390403837_-1150823453.jpg",
-        desc: "When carbon detection and mobility are essential, you can rely on the Specto shimatsu handheld LIBS analyser. Using Laser Induced Breakdown Spectroscopy (LIBS), the HHLibs delivers superior performance and enhanced productivity.",
-        tags: [
-          {label:"Handheld LIBS", href:"optical-emission-spectrometer_sp.html"},
-          {label:"OES Spectrometer", href:"oes-spectrometer_sp.html"},
-          {label:"spark oes", href:"spark-oes_sp.html"},
-          {label:"arc spark spectrometer", href:"arc-spark-spectrometer_sp.html"}
-        ]
-      },
-      {
-        href: "Online_LIBS_Analyzer.html",
-        title: "Online LIBS Analyzer",
-        img: "images/new/onlinelibs.jpeg",
-        imgStyle: "height:206px; object-fit:cover; width:100%;",
-        desc: "Radiation-free elemental composition analytics for real-time process control optimization in mining and mineral processing.",
-        tags: [
-          {label:"metal analyzer", href:"metal-analyzer_sp.html"},
-          {label:"oes spectrometer", href:"oes-spectrometer_sp.html"},
-          {label:"direct reading spectrometer", href:"direct-reading-spectrometer_sp.html"}
-        ]
-      },
-      {
-        href: "In_Situ_LIBS_Scanner.html",
-        title: "In Situ LIBS Scanner",
-        img: "uploadfile/bannerimg/1-s2.0-S0584854721003049-ga1.jpg",
-        imgStyle: "height:205px; object-fit:cover; width:100%;",
-        desc: "Online detection and real-time feedback of slurry grade for intelligent flotation control—guide the process, control reagent dosages, improve recovery rates.",
-        tags: [
-          {label:"Online LIBS Analyzer", href:"mobile-metal-analyzer_sp.html"},
-          {label:"mobile spectrometer", href:"mobile-spectrometer_sp.html"},
-          {label:"portable metals analyzer", href:"portable-metals-analyzer_sp.html"},
-          {label:"mobile spectrometer for metal analysis", href:"mobile-spectrometer-for-metal-analysis_sp.html"},
-          {label:"mobile arc spark spectrometer", href:"mobile-arc-spark-spectrometer_sp.html"},
-          {label:"mobile oes metal analyzer", href:"mobile-oes-metal-analyzer_sp.html"}
-        ]
-      },
-      {
-        href: "Desktop_LIBS_Analyzer.html",
-        title: "Desktop LIBS Analyzer",
-        img: "images/new/Desktop_LIBS_Analyzer.jpg",
-        desc: "Complete solution for optical particle analysis and technical cleanliness. Automatic filter analysis, fast live analytics, full system integration, intuitive software.",
-        tags: [
-          {label:"spark spectrometer", href:"spark-spectrometer_sp.html"},
-          {label:"spark emission spectrometer", href:"spark-emission-spectrometer_sp.html"}
-        ]
-      }
-    ];
+    <!-- فقط یک اسکریپت کوچک وانیلا برای map محصولات -->
+    <script>
+      (function () {
+        // داده‌هایت را اینجا نگه دار و فقط ویرایش کن
+        var products = [
+          {
+            href: "Handheld_LIBS.html",
+            title: "Handheld LIBS",
+            img: "uploadfile/bannerimg/-1390403837_-1150823453.jpg",
+            desc: "When carbon detection and mobility are essential, you can rely on the Specto shimatsu handheld LIBS analyser. Using Laser Induced Breakdown Spectroscopy (LIBS), the HHLibs delivers superior performance and enhanced productivity.",
+          },
+          {
+            href: "Online_LIBS_Analyzer.html",
+            title: "Online LIBS Analyzer",
+            img: "images/new/onlinelibs.jpeg",
+            imgStyle: "height:206px; object-fit:cover; width:100%;",
+            desc: "Radiation-free elemental composition analytics for real-time process control optimization in mining and mineral processing.",
+          },
+          {
+            href: "In_Situ_LIBS_Scanner.html",
+            title: "In Situ LIBS Scanner",
+            img: "uploadfile/bannerimg/1-s2.0-S0584854721003049-ga1.jpg",
+            imgStyle: "height:205px; object-fit:cover; width:100%;",
+            desc: "Online detection and real-time feedback of slurry grade for intelligent flotation control—guide the process, control reagent dosages, improve recovery rates.",
+          },
+          {
+            href: "Desktop_LIBS_Analyzer.html",
+            title: "Desktop LIBS Analyzer",
+            img: "images/new/Desktop_LIBS_Analyzer.jpg",
+            desc: "Complete solution for optical particle analysis and technical cleanliness. Automatic filter analysis, fast live analytics, full system integration, intuitive software.",
+          },
+        ];
 
-    function tagList(tags){
-      if(!tags || !tags.length) return '';
-      var html = '<ul class="post_blog_tag"><p><i class="fa fa-tags"></i>Tags :</p>';
-      for (var i=0;i<tags.length;i++){
-        html += '<li><a href="'+tags[i].href+'">'+tags[i].label+'</a></li>';
-      }
-      html += '</ul>';
-      return html;
-    }
+        function tagList(tags) {
+          if (!tags || !tags.length) return "";
+          var html =
+            '<ul class="post_blog_tag"><p><i class="fa fa-tags"></i>Tags :</p>';
+          for (var i = 0; i < tags.length; i++) {
+            html +=
+              '<li><a href="' +
+              tags[i].href +
+              '">' +
+              tags[i].label +
+              "</a></li>";
+          }
+          html += "</ul>";
+          return html;
+        }
 
-    function productCard(p){
-      return ''+
-      '<li class="dd">'+
-        '<div class="clearfix dd">'+
-          '<div class="cbp-vm-image">'+
-            '<a class="link" href="'+p.href+'">'+
-              '<img alt="'+p.title+'" src="'+p.img+'" '+(p.imgStyle?'style="'+p.imgStyle+'"':'')+' />'+
-            '</a>'+
-          '</div>'+
-          '<div class="cbp-list-center clearfix">'+
-            '<div class="cbp-list-left">'+
-              '<a href="'+p.href+'" class="cbp-title">'+p.title+'</a>'+
-              '<div class="cbp-vm-details">'+p.desc+'</div>'+
-              tagList(p.tags)+
-              '<div class="more">'+
-                '<span class="main_more" style="background-color:#ff6b00">'+
-                  '<a rel="nofollow" href="'+p.href+'">view more</a>'+
-                '</span>'+
-              '</div>'+
-            '</div>'+
-          '</div>'+
-        '</div>'+
-      '</li>';
-    }
+        function productCard(p) {
+          return (
+            '<li class="dd">' +
+            '<div class="clearfix dd">' +
+            '<div class="cbp-vm-image">' +
+            '<a class="link" href="' +
+            p.href +
+            '">' +
+            '<img alt="' +
+            p.title +
+            '" src="' +
+            p.img +
+            '" ' +
+            (p.imgStyle ? 'style="' + p.imgStyle + '"' : "") +
+            " />" +
+            "</a>" +
+            "</div>" +
+            '<div class="cbp-list-center clearfix">' +
+            '<div class="cbp-list-left">' +
+            '<a href="' +
+            p.href +
+            '" class="cbp-title">' +
+            p.title +
+            "</a>" +
+            '<div class="cbp-vm-details">' +
+            p.desc +
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "</li>"
+          );
+        }
 
-    var ul = document.getElementById('products-list');
-    if(!ul){ return; }
-    var out = '';
-    for (var j=0;j<products.length;j++){ out += productCard(products[j]); }
-    ul.innerHTML = out;
-  })();
-  </script>
-</body>
+        var ul = document.getElementById("products-list");
+        if (!ul) {
+          return;
+        }
+        var out = "";
+        for (var j = 0; j < products.length; j++) {
+          out += productCard(products[j]);
+        }
+        ul.innerHTML = out;
+      })();
+    </script>
+  </body>
 </html>
