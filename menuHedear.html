@@ -1,5 +1,5 @@
 <header class="large" id="menuHeader">
-  <div class="wi" style="align-items: center; display: flex; justify-content: space-between">
+  <div class="header-container">
     <!-- لوگو -->
     <div id="logo" class="clearfix">
       <h1 style="margin: 0">
@@ -9,219 +9,320 @@
       </h1>
     </div>
 
-    <!-- آیکن همبرگر -->
-    <div class="hamburger">☰</div>
+    <!-- منوی دسکتاپ -->
+    <nav class="desktop-menu">
+      <ul class="desktop-nav">
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a href="products.html">Products</a>
+          <ul class="vmegamenu">
+            <li><a href="Handheld_LIBS.html">Handheld LIBS</a></li>
+            <li><a href="Online_LIBS_Analyzer.html">Online LIBS Analyzer</a></li>
+            <li><a href="In_Situ_LIBS_Scanner.html">In Situ LIBS Scanner</a></li>
+            <li><a href="Desktop_LIBS_Analyzer.html">Desktop LIBS Analyzer</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="application_nc2.html">Application</a>
+          <ul class="vmegamenu">
+            <li><a href="metals.html">Metals</a></li>
+            <li><a href="mining_n20.html">Mining</a></li>
+            <li><a href="Environmental.html">Environmental</a></li>
+            <li><a href="Industry.html">Industry</a></li>
+            <li><a href="Biomedical.html">Biomedical</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="solutions_nc3.html">Solutions</a>
+          <ul class="vmegamenu">
+            <li><a href="Steel_industry.html">Steel Industry</a></li>
+            <li><a href="Coal.html">Coal</a></li>
+            <li><a href="cement_n35.html">Cement</a></li>
+            <li><a href="WasteManagement.html">Waste Management</a></li>
+          </ul>
+        </li>
+        <!-- <li><a href="RefPage.html">Reference</a></li> -->
+        <li><a href="contact-us_d2.html">Contact us</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hamburger -->
+    <button class="hamburger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">☰</button>
   </div>
 
-  <!-- منوی دسکتاپ -->
-  <nav class="mainmenu desktop">
-    <ul>
-      <li><a href="index.html">Home</a></li>
+  <!-- منوی موبایل (Sidebar) -->
+  <nav id="mobileMenu" class="mainmenu" aria-hidden="true">
+    <!-- Sidebar header -->
+    <div class="sidebar-header">
+      <a href="index.html" class="sidebar-logo">
+        <img src="images/new/New_Project.png" alt="logo" />
+      </a>
+      <button class="sidebar-close" aria-label="Close menu">×</button>
+    </div>
 
-      <li class="has-submenu">
-        <a href="products.html">Products ▾</a>
-        <ul class="vmegamenu">
-          <li><a href="Handheld_LIBS.html">Handheld LIBS</a></li>
-          <li><a href="Online_LIBS_Analyzer.html">Online LIBS Analyzer</a></li>
-          <li><a href="In_Situ_LIBS_Scanner.html">In Situ LIBS Scanner</a></li>
-          <li><a href="Desktop_LIBS_Analyzer.html">Desktop LIBS Analyzer</a></li>
-        </ul>
-      </li>
+    <!-- Sidebar body -->
+    <div class="sidebar-body">
+      <ul class="side-list">
+         <li class="has-sub">
+          <button class="side-accordion" >
+            <a href="index.html">Home</a>
+          </button>
+         
+        </li>
 
-      <li class="has-submenu">
-        <a href="application_nc2.html">Application ▾</a>
-        <ul class="vmegamenu">
-          <li><a href="metals.html">Metals</a></li>
-          <li><a href="mining_n20.html">Mining</a></li>
-          <li><a href="Environmental.html">Environmental</a></li>
-          <li><a href="Industry.html">Industry</a></li>
-          <li><a href="Biomedical.html">Biomedical</a></li>
-        </ul>
-      </li>
+        <li class="has-sub">
+          <button class="side-accordion" aria-expanded="false">
+            <a href="products.html">Products</a>
+          </button>
+          <ul class="sub">
+            <li><a href="Handheld_LIBS.html">Handheld LIBS</a></li>
+            <li><a href="Online_LIBS_Analyzer.html">Online LIBS Analyzer</a></li>
+            <li><a href="In_Situ_LIBS_Scanner.html">In Situ LIBS Scanner</a></li>
+            <li><a href="Desktop_LIBS_Analyzer.html">Desktop LIBS Analyzer</a></li>
+          </ul>
+        </li>
 
-      <li class="has-submenu">
-        <a href="solutions_nc3.html">Solutions ▾</a>
-        <ul class="vmegamenu">
-          <li><a href="Steel_industry.html">Steel Industry</a></li>
-          <li><a href="Coal">Coal</a></li>
-          <li><a href="cement_n35.html">Cement</a></li>
-        </ul>
-      </li>
+        <li class="has-sub">
+          <button class="side-accordion" aria-expanded="false">
+            <a href="application_nc2.html">Application</a>
+          </button>
+          <ul class="sub">
+            <li><a href="metals.html">Metals</a></li>
+            <li><a href="mining_n20.html">Mining</a></li>
+            <li><a href="Environmental.html">Environmental</a></li>
+            <li><a href="Industry.html">Industry</a></li>
+            <li><a href="Biomedical.html">Biomedical</a></li>
+          </ul>
+        </li>
 
-      <li><a href="contact-us_d2.html">Contact us</a></li>
-    </ul>
+        <li class="has-sub">
+          <button class="side-accordion" aria-expanded="false">
+            <a href="solutions_nc3.html">Solutions</a>
+          </button>
+          <ul class="sub">
+            <li><a href="Steel_industry.html">Steel Industry</a></li>
+            <li><a href="Coal.html">Coal</a></li>
+            <li><a href="cement_n35.html">Cement</a></li>
+            <li><a href="WasteManagement.html">Waste Management</a></li>
+          </ul>
+        </li>
+
+
+    <li class="has-sub">
+          <!-- <button class="side-accordion" aria-expanded="false">
+            <a href="RefPage.html">Reference</a>
+          </button> -->
+         
+        </li>
+
+
+         <li class="has-sub">
+          <button class="side-accordion" aria-expanded="false">
+            <a href="contact-us_d2.html">Contact us</a>
+          </button>
+        
+        </li>
+      </ul>
+    </div>
+
   </nav>
 
-  <!-- منوی موبایل -->
-  <nav class="mobilemenu">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="products.html">Products</a></li>
-      <li><a href="application_nc2.html">Application</a></li>
-      <li><a href="solutions_nc3.html">Solutions</a></li>
-      <li><a href="contact-us_d2.html">Contact us</a></li>
-    </ul>
-  </nav>
-
-  <!-- پس‌زمینه تاریک -->
+  <!-- Overlay -->
   <div class="overlay"></div>
 
   <style>
-    body {
-      margin: 0;
-      font-family: sans-serif;
-    }
-
+    /* ===== Header frame ===== */
     header.large {
       background: linear-gradient(90deg, #0d1b2a 0%, #0d1b2a 90%, #1c1c1c 100%);
       color: #fff;
-      padding: 10px 20px;
+      height: 105px;
+      position: fixed; top: 0; left: 0; width: 100%;
+      z-index: 1005;
     }
-
-    #logo img {
-      max-height: 70px;
+    .header-container {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 105px; padding: 0 40px;
     }
+    #logo img { max-height: 100px; height: auto; width: auto; }
 
-    /* ===== دسکتاپ ===== */
-    .mainmenu.desktop ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-      margin: 0;
-      padding: 0;
-      align-items: center;
+    /* ===== Desktop Nav ===== */
+    .desktop-nav {
+      display: flex; gap: 40px; list-style: none; margin: 0; padding: 0; align-items: center;
     }
-
-    .mainmenu.desktop ul li {
-      position: relative;
+    .desktop-nav > li { position: relative; }
+    .desktop-nav > li > a {
+      color: white; font-weight: 600; font-size: 17px; text-decoration: none; position: relative;
     }
-
-    .mainmenu.desktop a {
-      color: #ff6b00;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
+    .desktop-nav > li > a::after {
+      content: ""; position: absolute; left: 50%; bottom: -5px; transform: translateX(-50%);
+      width: 100%; height: 2px; background: #ff6b00; opacity: 0; transition: opacity 0.3s ease;
     }
+    .desktop-nav > li:hover > a::after { opacity: 1; }
 
-    .mainmenu.desktop a:hover {
-      color: #ffaa33;
-    }
-
-    /* زیرمنوها */
+    /* Dropdown (exactly 2px below underline) */
     .vmegamenu {
-      display: none;
-      position: absolute;
-      background: #0d1b2a;
-      padding: 10px;
-      list-style: none;
-      min-width: 180px;
-      top: 100%;
-      left: 0;
-      z-index: 99;
-      border-radius: 6px;
+      list-style: none; position: absolute; top: calc(100% + 2px); left: 0;
+      background: #fff; padding: 0; min-width: 230px;
+      border-radius: 0 0 8px 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      opacity: 0; visibility: hidden; transition: opacity 0.3s ease; z-index: 100; margin-top: 0;
     }
-
-    .vmegamenu li {
-      padding: 5px 0;
-    }
-
+    .desktop-nav li:hover .vmegamenu { opacity: 1; visibility: visible; }
     .vmegamenu li a {
-      color: #ff6b00;
-      text-decoration: none;
-      font-size: 15px;
+      display: block; color: #0d1b2a; text-decoration: none; padding: 10px 20px; font-size: 15px;
+      border-bottom: 1px solid #ddd; transition: background 0.3s ease, color 0.3s ease;
     }
+    .vmegamenu li:last-child a { border-bottom: none; }
+    .vmegamenu li a:hover { background: #ff6b00; color: white; }
 
-    .has-submenu:hover .vmegamenu {
-      display: block;
-    }
-
-    /* ===== موبایل ===== */
+    /* ===== Hamburger ===== */
     .hamburger {
-      font-size: 30px;
-      color: #ff6b00;
-      cursor: pointer;
-      display: none;
-      user-select: none;
-      padding: 10px;
-      z-index: 1003;
+      font-size: 28px; color: #ff6b00; background: none; border: none; cursor: pointer;
+      display: none; padding: 10px;
     }
 
-    .mobilemenu {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      width: 250px;
-      height: 100vh;
-      background: #fff;
-      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
-      transition: left 0.3s ease;
-      z-index: 1002;
+    /* ===== Sidebar (Drawer) ===== */
+    .mainmenu{
+      position: fixed; top: 0; left: -280px; width: 280px; height: 100vh;
+      background: #0f172a; color: #e2e8f0;
+      box-shadow: 2px 0 18px rgba(0,0,0,.35);
+      transition: left .3s ease; z-index: 1002;
+      display: grid; grid-template-rows: auto 1fr auto;
     }
+    .mainmenu.open{ left: 0; }
 
-    .mobilemenu.open {
-      left: 0;
+    /* Sidebar header inside drawer */
+    .sidebar-header{
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px;
+      background: linear-gradient(90deg,#0d1b2a 0%,#1b263b 100%);
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
-
-    .mobilemenu ul {
-      list-style: none;
-      padding: 60px 20px;
-      margin: 0;
+    /* ✅ Bigger logo icon in sidebar */
+    .sidebar-logo img{
+      height: 64px; width: auto; display: block;
+      filter: drop-shadow(0 1px 1px rgba(0,0,0,.2));
     }
+    @media (max-width: 420px){ .sidebar-logo img{ height: 56px; } }
 
-    .mobilemenu ul li {
-      margin-bottom: 20px;
+    .sidebar-close{
+      font-size: 30px; line-height: 1; background: none; border: 0; color: #ff6b00;
+      cursor: pointer; padding: 8px 10px; border-radius: 10px;
     }
+    .sidebar-close:hover{ background: rgba(255,107,0,.10); }
 
-    .mobilemenu ul li a {
-      text-decoration: none;
-      color: #0d1b2a;
-      font-size: 18px;
+    .sidebar-body{ overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 8px 0; }
+    .side-list{ list-style: none; margin: 0; padding: 0; }
+
+    /* ✅ Unified button look for links and accordions */
+    .side-link,
+    .side-accordion{
+      display: block; width: 100%; text-align: left;
+      padding: 14px 18px; text-decoration: none;
+      color: #e2e8f0; font-size: 17px; font-weight: 700;
+      border: 0; background: transparent; cursor: pointer;
+      border-left: 3px solid transparent; border-radius: 0;
     }
+    .side-link:hover,
+    .side-accordion:hover{ background: rgba(255,255,255,.06); border-left-color: #ff6b00; }
 
-    /* overlay */
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-      z-index: 1000;
+    /* Accordion caret */
+    .has-sub { border-top: 1px solid rgba(255,255,255,.06); }
+    .has-sub:first-child { border-top: none; }
+
+    .side-accordion{ display: flex; align-items: center; justify-content: space-between; }
+    .side-accordion::after{
+      content: "›"; font-size: 20px; transform: rotate(0deg); transition: transform .2s ease; opacity: .9;
     }
+    .has-sub.open .side-accordion::after{ transform: rotate(90deg); }
 
-    .overlay.active {
-      opacity: 1;
-      pointer-events: auto;
+    /* Animated submenu panel */
+    .sub{
+      list-style: none; margin: 0; padding: 0 0 6px;
+      max-height: 0; overflow: hidden; transition: max-height .25s ease;
+      background: rgba(255,255,255,.03);
     }
+    .has-sub.open .sub{ max-height: 500px; } /* adjust if you have many items */
+    .sub li a{
+      display: block; padding: 10px 24px 10px 36px;
+      font-size: 16px; color: #cbd5e1; text-decoration: none; font-weight: 600;
+    }
+    .sub li a:hover{ background: rgba(255,255,255,.06); color: #fff; }
 
-    /* واکنش‌گرا */
+    /* Sidebar footer CTA */
+    .sidebar-footer{
+      padding: 14px 16px; border-top: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.15);
+    }
+    .side-cta{
+      display: block; text-align: center; text-decoration: none; font-weight: 700;
+      padding: 12px 14px; border-radius: 10px; color:#0d1b2a; background:#ff6b00;
+    }
+    .side-cta:hover{ filter: brightness(1.05); }
+
+    /* ===== Overlay ===== */
+    .overlay{
+      position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+      opacity: 0; pointer-events: none; transition: opacity 0.3s ease; z-index: 1001;
+    }
+    .overlay.active{ opacity: 1; pointer-events: auto; }
+
+    /* ===== Responsive ===== */
     @media (max-width: 992px) {
-      .mainmenu.desktop {
-        display: none;
-      }
-
-      .hamburger {
-        display: block;
-      }
+      .desktop-menu { display: none; }
+      .hamburger { display: block; }
     }
   </style>
 
   <script>
-    const hamburger = document.querySelector(".hamburger");
-    const menu = document.querySelector(".mobilemenu");
-    const overlay = document.querySelector(".overlay");
+    (function(){
+      const header    = document.getElementById('menuHeader');
+      const hamburger = header.querySelector('.hamburger');
+      const menu      = header.querySelector('.mainmenu');
+      const overlay   = header.querySelector('.overlay');
+      const closeBtn  = header.querySelector('.sidebar-close');
 
-    hamburger.addEventListener("click", () => {
-      menu.classList.toggle("open");
-      overlay.classList.toggle("active");
-    });
+      function openMenu(){
+        menu.classList.add('open');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        if (hamburger) hamburger.setAttribute('aria-expanded','true');
+        menu.setAttribute('aria-hidden','false');
+      }
+      function closeMenu(){
+        menu.classList.remove('open');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+        if (hamburger) hamburger.setAttribute('aria-expanded','false');
+        menu.setAttribute('aria-hidden','true');
+      }
 
-    overlay.addEventListener("click", () => {
-      menu.classList.remove("open");
-      overlay.classList.remove("active");
-    });
+      // Open/Close
+      if (hamburger) hamburger.addEventListener('click', openMenu);
+      if (closeBtn)  closeBtn.addEventListener('click', closeMenu);
+      overlay.addEventListener('click', closeMenu);
+      document.addEventListener('keydown', (e)=>{ if (e.key === 'Escape') closeMenu(); });
+
+      // ✅ Sidebar delegation: accordions toggle; links navigate
+      menu.addEventListener('click', (e)=>{
+        // Accordion button
+        const accBtn = e.target.closest('.side-accordion');
+        if (accBtn) {
+          const li = accBtn.closest('.has-sub');
+          const willOpen = !li.classList.contains('open');
+          li.classList.toggle('open', willOpen);
+          accBtn.setAttribute('aria-expanded', String(willOpen));
+          return; // don't treat as link
+        }
+        // Links: close drawer and let the browser navigate
+        const link = e.target.closest('a');
+        if (link) {
+          closeMenu();
+          // no preventDefault -> page opens normally
+        }
+      });
+
+      // Ensure closed when resized to desktop
+      window.matchMedia('(min-width: 993px)').addEventListener('change', (e)=>{ if (e.matches) closeMenu(); });
+    })();
   </script>
 </header>

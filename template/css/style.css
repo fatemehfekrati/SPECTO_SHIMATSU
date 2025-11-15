@@ -16,18 +16,18 @@
 
  body,
  ul,
- img,
- p,
- input,
+ 
+
+
  dl,
  dd,
  tr,
  th,
  td {
- 	margin: 0;
- 	padding: 0;
+ margin-top: 100px;
  	font-family: 'Montserrat', sans-serif;
- 	font-weight: 400;
+ 	font-weight: 400; 
+	
  }
 
  em {
@@ -870,6 +870,8 @@
  /* mainmenu */
  .mainmenu {
  	text-align: left;
+	
+
  }
 
  .mainmenu>nav>ul>li {
@@ -1333,27 +1335,15 @@
  }
 
 
- #logo {
- 	position: relative;
- 	float: left;
- 	z-index: 999;
- 	margin-top: 3px;
- }
 
  #logo h1 {
  	margin: 0;
  	padding: 0;
  }
 
- #logo a.top_logo {
- 	padding: 0;
- 	display: inline-block;
- 	position: relative;
- 	z-index: 99
- }
 
  #logo img {
- 	max-width: 300px;
+ 	/* max-width: 300px; */
  	height: auto;
  	padding: 0;
  	transition: all .5s;
@@ -1777,7 +1767,7 @@
 
  	#logo img,
  	header.small #logo img {
- 		max-width: 80px
+ 		max-width: 195px
  	}
 
  	.header #logo,
