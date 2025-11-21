@@ -1,3 +1,5 @@
+
+
 fetch("menuHedear.html")
   .then((response) => {
     if (!response.ok) throw new Error("Header load failed");
@@ -5,7 +7,9 @@ fetch("menuHedear.html")
   })
   .then((html) => {
     document.getElementById("menuHedear").innerHTML = html;
-    initHamburgerMenu(); // فعال کردن منو بعد از inject
+
+    // حالا بعد از اینکه منو اومد، اسکریپت فعال میشه
+    initHamburgerMenu();
   })
   .catch((error) => {
     console.error("Header:", error);
@@ -14,38 +18,16 @@ fetch("menuHedear.html")
 function initHamburgerMenu() {
   const hamburger = document.querySelector(".hamburger");
   const menu = document.querySelector(".mainmenu");
-  const overlay = document.querySelector(".overlay");
 
-  if (!hamburger || !menu || !overlay) {
+  if (!hamburger || !menu) {
     console.warn("Header menu elements not found.");
     return;
   }
 
-  // باز و بسته کردن منو
-  hamburger.addEventListener("click", (e) => {
-    e.stopPropagation();
+  hamburger.addEventListener("click", () => {
     menu.classList.toggle("open");
-    overlay.classList.toggle("active");
-  });
-
-  // بستن با overlay
-  overlay.addEventListener("click", () => {
-    menu.classList.remove("open");
-    overlay.classList.remove("active");
-  });
-
-  // جلوگیری از بسته شدن وقتی روی منو کلیک شد
-  menu.addEventListener("click", (e) => e.stopPropagation());
-
-  // بستن وقتی خارج کلیک شد (اختیاری، چون overlay خودش کل فضای بیرون رو میگیره)
-  document.addEventListener("click", (e) => {
-    if (!menu.contains(e.target) && !hamburger.contains(e.target) && menu.classList.contains("open")) {
-      menu.classList.remove("open");
-      overlay.classList.remove("active");
-    }
   });
 }
-
 
 fetch("Footer.html")
   .then((response) => {
@@ -133,6 +115,18 @@ function initApplications() {
   });
 
   
+ fetch("OurMissionLanding.html")
+  .then((response) => {
+    if (!response.ok) throw new Error("");
+    return response.text();
+  })
+  .then((html) => {
+    document.getElementById("OurMission_Landing").innerHTML = html;
+    initApplications(); 
+  })
+  .catch((error) => {
+    console.error(":", error);
+  });
 
 
 
@@ -260,51 +254,4 @@ fetch("ProLanding.html")
 
   // استارت
   measure();
-}
-
-
-// --- هدر ---
-fetch("components/menuHeader.html")
-  .then((res) => {
-    if (!res.ok) throw new Error("Header load failed");
-    return res.text();
-  })
-  .then((data) => {
-    document.getElementById("menuHeader").innerHTML = data;
-    initHamburgerMenu(); // بعد از لود هدر، منو فعال شه
-  })
-  .catch((err) => console.error("Header:", err));
-
-// --- سایدبار ---
-fetch("components/sidebar.html")
-  .then((res) => {
-    if (!res.ok) throw new Error("Sidebar load failed");
-    return res.text();
-  })
-  .then((data) => {
-    document.getElementById("sidebar").innerHTML = data;
-  })
-  .catch((err) => console.error("Sidebar:", err));
-
-// --- تابع باز و بسته شدن منوی موبایل ---
-function initHamburgerMenu() {
-  const hamburger = document.querySelector(".hamburger");
-  const menu = document.querySelector(".mainmenu");
-  const overlay = document.querySelector(".overlay");
-
-  if (!hamburger || !menu || !overlay) {
-    console.warn("Menu elements not found yet.");
-    return;
-  }
-
-  hamburger.addEventListener("click", (e) => {
-    e.stopPropagation();
-    menu.classList.toggle("open");
-    overlay.classList.toggle("active");
-  });
-
-  overlay.addEventListener("click", () => {
-    menu.classList.remove("open");
-    overlay.classList.remove("active");
-  });
 }
