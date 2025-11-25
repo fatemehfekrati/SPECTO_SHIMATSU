@@ -1,5 +1,77 @@
+// ================== هدر (Menu Header) ==================
 
+function initHeaderMenu() {
+  const header = document.getElementById("menuHeader");
+  if (!header) {
+    console.warn("menuHeader not found");
+    return;
+  }
 
+  const hamburger = header.querySelector(".hamburger");
+  const menu      = header.querySelector(".mainmenu");
+  const overlay   = header.querySelector(".overlay");
+  const closeBtn  = header.querySelector(".sidebar-close");
+
+  if (!hamburger || !menu) {
+    console.warn("Header menu elements not found.");
+    return;
+  }
+
+  function openMenu() {
+    menu.classList.add("open");
+    if (overlay) overlay.classList.add("active");
+    document.body.style.overflow = "hidden";
+    hamburger.setAttribute("aria-expanded", "true");
+    menu.setAttribute("aria-hidden", "false");
+  }
+
+  function closeMenu() {
+    menu.classList.remove("open");
+    if (overlay) overlay.classList.remove("active");
+    document.body.style.overflow = "";
+    hamburger.setAttribute("aria-expanded", "false");
+    menu.setAttribute("aria-hidden", "true");
+  }
+
+  // باز/بسته کردن
+  hamburger.addEventListener("click", openMenu);
+  if (closeBtn)  closeBtn.addEventListener("click", closeMenu);
+  if (overlay)   overlay.addEventListener("click", closeMenu);
+
+  // بستن با Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+
+  // آکاردئون‌ها + بستن منو روی کلیک لینک
+  menu.addEventListener("click", (e) => {
+    // دکمه‌ی آکاردئون
+    const accBtn = e.target.closest(".side-accordion");
+    if (accBtn) {
+      const li = accBtn.closest(".has-sub");
+      if (!li) return;
+
+      const willOpen = !li.classList.contains("open");
+      li.classList.toggle("open", willOpen);
+      accBtn.setAttribute("aria-expanded", String(willOpen));
+      return; // نذار به‌عنوان لینک رفتار کنه
+    }
+
+    // اگر روی لینک کلیک شد → منو بسته شود
+    const link = e.target.closest("a");
+    if (link) {
+      closeMenu();
+      // preventDefault نمی‌ذاریم تا صفحه عوض بشه
+    }
+  });
+
+  // وقتی صفحه رفت روی دسکتاپ، منو بسته شود
+  window.matchMedia("(min-width: 993px)").addEventListener("change", (e) => {
+    if (e.matches) closeMenu();
+  });
+}
+
+// بعد از لود شدن HTML هدر، منو را مقداردهی می‌کنیم
 fetch("menuHedear.html")
   .then((response) => {
     if (!response.ok) throw new Error("Header load failed");
@@ -7,27 +79,14 @@ fetch("menuHedear.html")
   })
   .then((html) => {
     document.getElementById("menuHedear").innerHTML = html;
-
-    // حالا بعد از اینکه منو اومد، اسکریپت فعال میشه
-    initHamburgerMenu();
+    initHeaderMenu(); // ✅ اینجا صدا زده می‌شود
   })
   .catch((error) => {
     console.error("Header:", error);
   });
 
-function initHamburgerMenu() {
-  const hamburger = document.querySelector(".hamburger");
-  const menu = document.querySelector(".mainmenu");
 
-  if (!hamburger || !menu) {
-    console.warn("Header menu elements not found.");
-    return;
-  }
-
-  hamburger.addEventListener("click", () => {
-    menu.classList.toggle("open");
-  });
-}
+// ================== Footer ==================
 
 fetch("Footer.html")
   .then((response) => {
@@ -40,6 +99,9 @@ fetch("Footer.html")
   .catch((error) => {
     console.error(":", error);
   });
+
+
+// ================== New Products Pic ==================
 
 fetch("NewProductsPic.html")
   .then((response) => {
@@ -54,6 +116,8 @@ fetch("NewProductsPic.html")
   });
 
 
+// ================== Leave Message ==================
+
 fetch("LeaveMessage.html")
   .then((response) => {
     if (!response.ok) throw new Error("");
@@ -67,12 +131,14 @@ fetch("LeaveMessage.html")
   });
 
 
+// ================== Applications Landing ==================
+
 function initApplications() {
-  const nav = document.getElementById("apps-nav");
-  const img = document.getElementById("apps-hero");
+  const nav   = document.getElementById("apps-nav");
+  const img   = document.getElementById("apps-hero");
   const title = document.getElementById("apps-title");
-  const desc = document.getElementById("apps-desc");
-  const cta = document.getElementById("apps-cta");
+  const desc  = document.getElementById("apps-desc");
+  const cta   = document.getElementById("apps-cta");
 
   if (!nav || !img || !title || !desc || !cta) return;
 
@@ -81,7 +147,8 @@ function initApplications() {
     if (!a) return;
     e.preventDefault();
 
-    nav.querySelectorAll(".apps__nav-item")
+    nav
+      .querySelectorAll(".apps__nav-item")
       .forEach((el) => el.classList.remove("is-active"));
 
     a.classList.add("is-active");
@@ -100,41 +167,35 @@ function initApplications() {
   }
 }
 
-  
- fetch("AppLanding.html")
+fetch("AppLanding.html")
   .then((response) => {
     if (!response.ok) throw new Error("");
     return response.text();
   })
   .then((html) => {
     document.getElementById("App_Landing").innerHTML = html;
-    initApplications(); 
+    initApplications();
   })
   .catch((error) => {
     console.error(":", error);
   });
 
-  
- fetch("OurMissionLanding.html")
+fetch("OurMissionLanding.html")
   .then((response) => {
     if (!response.ok) throw new Error("");
     return response.text();
   })
   .then((html) => {
     document.getElementById("OurMission_Landing").innerHTML = html;
-    initApplications(); 
+    initApplications();
   })
   .catch((error) => {
     console.error(":", error);
   });
 
 
+// ================== Pro Landing Slider ==================
 
-
-
-
-
-  // PRO LANDING
 fetch("ProLanding.html")
   .then((response) => {
     if (!response.ok) throw new Error("ProLanding failed");
@@ -144,7 +205,6 @@ fetch("ProLanding.html")
     const mount = document.getElementById("Pro_Landing");
     if (mount) {
       mount.innerHTML = html;
-      // بعد از تزریق HTML، اسلایدر را مقداردهی کن
       initLandingProductSlider(mount);
     }
   })
@@ -152,9 +212,7 @@ fetch("ProLanding.html")
     console.error(":", error);
   });
 
-
-  function initLandingProductSlider(scope){
-  // scope همون #Pro_Landing است
+function initLandingProductSlider(scope) {
   const track   = scope.querySelector("#sliderTrack");
   const prevBtn = scope.querySelector("#prevBtn");
   const nextBtn = scope.querySelector("#nextBtn");
@@ -165,15 +223,14 @@ fetch("ProLanding.html")
     return;
   }
 
-  let index = 0;      // ایندکس اولین کارتِ قابل مشاهده
-  let step  = 0;      // فاصله حرکت به اندازه یک کارت (px)
-  let maxIndex = 0;   // بیشترین ایندکس مجاز
+  let index    = 0;
+  let step     = 0;
+  let maxIndex = 0;
   const viewport = scope.querySelector(".slider-container");
 
-  function measure(){
+  function measure() {
     if (cards.length === 0) return;
 
-    // فاصله افقی بین کارت 0 و 1 (عرض واقعی کارت + پدینگ‌ها)
     const r0 = cards[0].getBoundingClientRect();
     if (cards.length >= 2) {
       const r1 = cards[1].getBoundingClientRect();
@@ -183,55 +240,54 @@ fetch("ProLanding.html")
     }
 
     const vw = viewport.clientWidth;
-    // چند کارت در نما جا می‌شود؟ (بر اساس عرض واقعی کارت)
     const perView = Math.max(1, Math.round(vw / step));
     maxIndex = Math.max(0, cards.length - perView);
 
-    // اگر بعد از ریسایز خارج شد، اصلاح
     if (index > maxIndex) index = maxIndex;
 
     apply();
     updateButtons();
   }
 
-  function apply(){
+  function apply() {
     const x = -(index * step);
-    // بدون تغییر CSS، فقط transform پیکسلی می‌گذاریم
     track.style.transform = `translateX(${x}px)`;
   }
 
-  function updateButtons(){
-    prevBtn.disabled = (index <= 0);
-    nextBtn.disabled = (index >= maxIndex);
+  function updateButtons() {
+    prevBtn.disabled = index <= 0;
+    nextBtn.disabled = index >= maxIndex;
   }
 
-  function goNext(){
-    if (index < maxIndex){
-      index += 1; // اگر خواستی صفحه‌ای حرکت کند: index += perView (ذخیره perView لازم است)
+  function goNext() {
+    if (index < maxIndex) {
+      index += 1;
       if (index > maxIndex) index = maxIndex;
-      apply(); updateButtons();
+      apply();
+      updateButtons();
     }
   }
-  function goPrev(){
-    if (index > 0){
+
+  function goPrev() {
+    if (index > 0) {
       index -= 1;
       if (index < 0) index = 0;
-      apply(); updateButtons();
+      apply();
+      updateButtons();
     }
   }
 
-  // لیسنرها
   nextBtn.addEventListener("click", goNext);
   prevBtn.addEventListener("click", goPrev);
 
-  // افکت Add to Cart (مثل قبل)
   scope.querySelectorAll(".add-to-cart").forEach((button) => {
     button.addEventListener("click", function () {
       const originalText = this.textContent;
-      const originalBg   = this.style.background;
+      const originalBg = this.style.background;
 
       this.textContent = "Added!";
-      this.style.background = "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)";
+      this.style.background =
+        "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)";
 
       setTimeout(() => {
         this.textContent = originalText;
@@ -240,18 +296,17 @@ fetch("ProLanding.html")
     });
   });
 
-  // ریسایز/لود برای اندازه‌گیری مجدد
   let resizeTimer;
   window.addEventListener("resize", () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(measure, 120);
   });
-  // اگر تصاویر لِیزی باشند
-  cards.forEach(card => {
+
+  cards.forEach((card) => {
     const img = card.querySelector("img");
-    if (img && !img.complete) img.addEventListener("load", measure, { once: true });
+    if (img && !img.complete)
+      img.addEventListener("load", measure, { once: true });
   });
 
-  // استارت
   measure();
 }
