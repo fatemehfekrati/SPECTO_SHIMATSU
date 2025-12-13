@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("public")); // فایل‌های HTML/CSS/JS از این پوشه لود می‌شن
+app.use(express.static("public")); 
 app.get("/contact-us_d2", (req, res) => {
   res.sendFile(__dirname + "/public/contact-us_d2.html");
 });
@@ -13,24 +13,19 @@ app.get("/Quanta_Libs", (req, res) => {
   res.sendFile(__dirname + "/public/Quanta_Libs.html");
 });
 
-
-// ============= SMTP تنظیمات ===============
-// فقط این دو مقدار رو تغییر بده: user + pass
-
 const transporter = nodemailer.createTransport({
-  host: "server146c.irwebspace.com",   // هاست واقعی SMTP شما
-  port: 587,
+  host: "server146c.irwebspace.com",  
   secure: false,
   auth: {
-    user: "moro@spectoshimatsu.com",   // ایمیلی که ازش ارسال می‌کنی
-    pass: "z9pKifTW725SI0ov"              // پسورد جدیدی که در DirectAdmin ست کردی
+    user: "moro@spectoshimatsu.com",   
+    pass: "z9pKifTW725SI0ov"              
   },
   tls: {
-    rejectUnauthorized: false          // چون SSL هاست اشتراکیه و دامنه فرق داره
+    rejectUnauthorized: false         
   }
 });
 
-// ============= ارسال فرم ===============
+
 app.post("/send", async (req, res) => {
   const { name, email, phone ,industry ,message } = req.body;
 
@@ -38,7 +33,7 @@ app.post("/send", async (req, res) => {
     console.log("sending to", "moro@spectoshimatsu.com");
     await transporter.sendMail({
       from: `"فرم سایت" <moro@spectoshimatsu.com>`,
-      to: "moro@spectoshimatsu.com",         // گیرنده (کارفرما)
+      to: "moro@spectoshimatsu.com",        
       subject: "اطلاعات جدید فرم",
       html: `
         <p><b>name:</b> ${name}</p>
