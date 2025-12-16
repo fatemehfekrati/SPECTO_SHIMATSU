@@ -18,7 +18,7 @@ const transporter = nodemailer.createTransport({
   secure: false,
   auth: {
     user: "moro@spectoshimatsu.com",   
-    pass: "z9pKifTW725SI0ov"              
+    pass: "z9pKifTW725SI0ov"               
   },
   tls: {
     rejectUnauthorized: false         
@@ -55,3 +55,4 @@ app.post("/send", async (req, res) => {
 app.listen(3000, () => {
   console.log("Server running on http://localhost:3000");
 });
+

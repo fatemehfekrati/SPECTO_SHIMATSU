@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 
   <title>ONH Analyzer,Direct Reading Spectrometer,ICP Atomic Emission Spectrometer</title>
-  <meta name="keywords" content="Laser Metal Analyzer,Cleanliness Test Equipment,EDXRF Spectrometer" />
+  <meta name="keywords" content="Laser Metallography Analyzer,Cleanliness Test Equipment,EDXRF Spectrometer" />
   <meta name="description"
         content="We are committed to providing high quality ONH Analyzer,Direct Reading Spectrometer,ICP Atomic Emission Spectrometer." />
   <meta name="google-site-verification" content="47bSou59IZtigCtqBCCl-WUyuYN-1CN9xVPAcyl4owA" />
@@ -16,22 +16,12 @@
   <meta property="og:image" content="" />
   <link href="uploadfile/userimg/image.ico" rel="shortcut icon" />
 
-  <!-- hreflang -->
-  <link rel="alternate" hreflang="en" href="application_nc2.html" />
-  <link rel="alternate" hreflang="fa" href="https://fa.SPECTO.com/application_nc2" />
-  <link rel="alternate" hreflang="fr" href="https://fr.SPECTO.com/application_nc2" />
-  <link rel="alternate" hreflang="ru" href="https://ru.SPECTO.com/application_nc2" />
-  <link rel="alternate" hreflang="es" href="https://es.SPECTO.com/application_nc2" />
-  <link rel="alternate" hreflang="pt" href="https://pt.SPECTO.com/application_nc2" />
-  <link rel="alternate" hreflang="ar" href="https://ar.SPECTO.com/application_nc2" />
-  <link rel="alternate" href="application_nc2.html" hreflang="x-default" />
-
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="images/moban.css" />
   <link rel="stylesheet" type="text/css" href="template/css/bootstrap.css" />
   <link rel="stylesheet" type="text/css" href="template/css/font-awesome.min.css" />
   <link rel="stylesheet" type="text/css" href="template/css/style.css" />
-<link type="text/css" rel="stylesheet" href="template/sidebar.css" />
+
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com/" />
@@ -40,7 +30,6 @@
         rel="stylesheet" />
 
   <!-- jQuery (در صورت نیاز main.js) -->
-  <script type="text/javascript" src="template/js/jquery-1.8.3.js"></script>
 </head>
 
 <body>
@@ -112,12 +101,12 @@
     // داده‌ها
     const applications = [
       {
-        href: "metals.html",
+        href: "Metallography.html",
         img: "images/Application/metal/MetalsImg.webp",
-        alt: "Metals",
-        title: "Metals",
-        text: "&nbsp; In metals analyzer instruments, Specto Shimatsu offers a full range of solutions for the entire metals industry &nbsp; SPECTO metals analyzer instruments carry out a wide diversity of analytical tasks for metals analysis. &nbsp; SPECTO metals analyzers are used to identify, sort, and analyze metals for incoming inspections, during production processes and before delivery. And that’s not all: J...",
-        cta: { label: "View details", href: "metals.html" }
+        alt: "Metallography",
+        title: "Metallography",
+        text: "&nbsp; In Metallography analyzer instruments, Specto Shimatsu offers a full range of solutions for the entire Metallography industry &nbsp; SPECTO Metallography analyzer instruments carry out a wide diversity of analytical tasks for Metallography analysis. &nbsp; SPECTO Metallography analyzers are used to identify, sort, and analyze Metallography for incoming inspections, during production processes and before delivery. And that’s not all: J...",
+        cta: { label: "View details", href: "Metallography.html" }
       },
       {
         href: "mining_n20.html",
@@ -160,7 +149,13 @@
         <div class="column">
           <a href="${item.href}" class="item_mask"></a>
           <a href="${item.href}" class="image">
-            <img src="${item.img}" alt="${item.alt}" />
+<img
+  src="${item.img}"
+  alt="${item.alt}"
+  loading="lazy"
+  width="400"
+  height="260"
+/>
           </a>
           <div class="wrap">
             <a href="${item.href}" class="title">${item.title}</a>

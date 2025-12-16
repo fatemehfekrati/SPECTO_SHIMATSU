@@ -19,7 +19,9 @@
           <ul class="vmegamenu">
             <li><a href="Quanta_Libs.html">Quanta LIBS</a></li>
             <li><a href="Online_Quanta_Scan.html">Online Quanta Scan</a></li>
-            <li><a href="In_Situ_LIBS_Scanner.html">In Situ LIBS Scanner</a></li>
+            <!-- <li>
+              <a href="In_Situ_LIBS_Scanner.html">In Situ LIBS Scanner</a>
+            </li> -->
             <li><a href="LaSpark.html">LaSpark</a></li>
           </ul>
         </li>
@@ -27,7 +29,7 @@
         <li>
           <a href="application_nc2.html">Application</a>
           <ul class="vmegamenu">
-            <li><a href="metals.html">Metals</a></li>
+            <li><a href="Metallography.html">Metallography</a></li>
             <li><a href="mining_n20.html">Mining</a></li>
             <li><a href="Environmental.html">Environmental</a></li>
             <li><a href="Industry.html">Industry</a></li>
@@ -41,7 +43,7 @@
             <li><a href="Steel_industry.html">Steel Industry</a></li>
             <li><a href="Coal.html">Coal</a></li>
             <li><a href="cement_n35.html">Cement</a></li>
-            <li><a href="WasteManagement.html">Waste Management</a></li>
+            <li><a href="Recycling.html">Recycling </a></li>
           </ul>
         </li>
 
@@ -74,7 +76,7 @@
     </div>
 
     <!-- Sidebar body -->
-    <div class="sidebar-body"> 
+    <div class="sidebar-body">
       <ul class="side-list">
         <!-- Home: بدون زیرمنو، ولی استایل مثل بقیه -->
         <li>
@@ -83,25 +85,40 @@
 
         <!-- Products: با زیرمنو -->
         <li class="has-sub">
-          <button class="side-accordion" type="button" aria-expanded="false">
-            <a href="products.html">Products</a>
-            
+
+
+          <button class="side-btn" type="button">
+          
+            <span style="width: 90%;height: 100%; ; display: flex;" ><a href="products.html">Products</a></span>
+            <span  class="side-accordion">›</span>
           </button>
+
+
           <ul class="sub">
             <li><a href="Quanta_Libs.html">Quanta LIBS</a></li>
             <li><a href="Online_Quanta_Scan.html">Online Quanta Scan</a></li>
-            <li><a href="In_Situ_LIBS_Scanner.html">In Situ LIBS Scanner</a></li>
+            <!-- <li>
+              <a href="In_Situ_LIBS_Scanner.html">In Situ LIBS Scanner</a>
+            </li> -->
             <li><a href="LaSpark.html">LaSpark</a></li>
           </ul>
         </li>
 
         <!-- Application -->
         <li class="has-sub">
-          <button class="side-accordion" type="button" aria-expanded="false">
-            Application
+          <button class="side-btn" type="button">
+            <span style="width: 90%;height: 100%; ; display: flex;">
+
+              <a href="application_nc2.html">Application</a>
+            </span>
+            <span class="side-accordion">
+              ›
+            </span>
           </button>
+
+
           <ul class="sub">
-            <li><a href="metals.html">Metals</a></li>
+            <li><a href="Metallography.html">Metallography</a></li>
             <li><a href="mining_n20.html">Mining</a></li>
             <li><a href="Environmental.html">Environmental</a></li>
             <li><a href="Industry.html">Industry</a></li>
@@ -110,23 +127,29 @@
         </li>
 
         <!-- Solutions -->
-        <li class="has-sub">
-          <button class="side-accordion" type="button" aria-expanded="false">
-            Solutions
+        <li class="has-sub" >
+          <button class="side-btn" type="button" style="border-bottom:1px solid #ffffff14">
+            <span  style="width: 90%;height: 100%;  display: flex;">
+
+              <a href="solutions_nc3.html">Solutions</a>
+            </span>
+            <span class="side-accordion">
+              ›
+            </span>
           </button>
           <ul class="sub">
             <li><a href="Steel_industry.html">Steel Industry</a></li>
             <li><a href="Coal.html">Coal</a></li>
             <li><a href="cement_n35.html">Cement</a></li>
-            <li><a href="WasteManagement.html">Waste Management</a></li>
+            <li><a href="Recycling.html">Recycling </a></li>
           </ul>
         </li>
 
         <!-- Contact us: بدون زیرمنو، ولی استایل مثل بقیه -->
-           <li>
+        <li style="border-bottom: 1px solid #ffffff14;">
           <a class="side-link" href="our_mission.html">Our mission</a>
         </li>
-        <li>
+        <li style="border-bottom: 1px solid #ffffff14;">
           <a class="side-link" href="contact-us_d2.html">Contact us</a>
         </li>
       </ul>
@@ -265,13 +288,75 @@
     }
 
     /* Sidebar header inside drawer */
+    /* ===== Sidebar main links ===== */
+    .side-list > li > a,
+    .side-list > li > button {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 20px;
+      font-size: 17px;
+      font-weight: 700;
+      color: #e5e7eb;
+      background: none;
+      border: none;
+      text-decoration: none;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .side-list > li > a:hover,
+    .side-list > li > button:hover {
+      background: rgba(255, 255, 255, 0.06);
+      color: #ffffff;
+    }
+
+    /* ===== has-sub button fix ===== */
+    .has-sub > button {
+      justify-content: space-between;
+    }
+    .side-list,
+    .side-list ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* لینک داخل دکمه */
+    .has-sub > button a {
+      color: inherit;
+      text-decoration: none;
+      flex: 1;
+    }
+
+    /* ===== Caret (>) ===== */
+    .side-accordion {
+      font-size: 18px;
+      font-weight: 900;
+      color: #ff6b00;
+      transition: transform 0.25s ease;
+    }
+
+    /* rotate caret when open */
+    .has-sub.open .side-accordion {
+      transform: rotate(90deg);
+    }
+
+    /* ===== Sub menu spacing fix ===== */
+    .sub li a {
+      font-size: 15.5px;
+      font-weight: 600;
+      padding-left: 44px;
+    }
+
     .sidebar-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 16px;
       background: linear-gradient(90deg, #0d1b2a 0%, #1b263b 100%);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid #ffffff14;
     }
 
     .sidebar-logo img {
@@ -301,42 +386,12 @@
     }
 
     .sidebar-body {
-      overflow-y: auto;
+     
       -webkit-overflow-scrolling: touch;
       padding: 8px 0;
     }
-    .side-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
 
-    /* ✅ استایل unified برای Home/Contact و بقیه */
-    .side-link,
-    .side-accordion {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      text-align: left;
-      padding: 14px 18px;
-      text-decoration: none;
-      color: #e2e8f0;
-      font-size: 17px;
-      font-weight: 700;
-      border: 0;
-      background: transparent;
-      cursor: pointer;
-      border-left: 3px solid transparent;
-      border-radius: 0;
-    }
-    .side-link:hover,
-    .side-accordion:hover {
-      background: rgba(255, 255, 255, 0.06);
-      border-left-color: #ff6b00;
-    }
-
-    /* Accordion caret فقط روی آیتم‌های دارای زیرمنو */
+  
     .has-sub {
       border-top: 1px solid rgba(255, 255, 255, 0.06);
     }
@@ -344,18 +399,6 @@
       border-top: none;
     }
 
-    .side-accordion::after {
-      content: "›";
-      font-size: 20px;
-      transform: rotate(0deg);
-      transition: transform 0.2s ease;
-      opacity: 0.9;
-    }
-    .has-sub.open .side-accordion::after {
-      transform: rotate(90deg);
-    }
-
-    /* Animated submenu panel */
     .sub {
       list-style: none;
       margin: 0;
@@ -381,7 +424,6 @@
       color: #fff;
     }
 
-    
     .side-cta {
       display: block;
       text-align: center;
@@ -406,10 +448,11 @@
       transition: opacity 0.3s ease;
       z-index: 1001;
     }
-    .overlay.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
+   .overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 
     /* ===== Responsive ===== */
     @media (max-width: 992px) {

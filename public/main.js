@@ -1,6 +1,17 @@
-console.log("hh")
 
 // ================== هدر (Menu Header) ==================
+fetch("menuHedear.html")
+  .then((response) => {
+    if (!response.ok) throw new Error("Header load failed");
+    return response.text();
+  })
+  .then((html) => {
+    document.getElementById("menuHedear").innerHTML = html;
+    initHeaderMenu(); // ✅ اینجا صدا زده می‌شود
+  })
+  .catch((error) => {
+    console.error("Header:", error);
+  });
 
 function initHeaderMenu() {
   const header = document.getElementById("menuHeader");
@@ -74,18 +85,6 @@ function initHeaderMenu() {
 }
 
 // بعد از لود شدن HTML هدر، منو را مقداردهی می‌کنیم
-fetch("menuHedear.html")
-  .then((response) => {
-    if (!response.ok) throw new Error("Header load failed");
-    return response.text();
-  })
-  .then((html) => {
-    document.getElementById("menuHedear").innerHTML = html;
-    initHeaderMenu(); // ✅ اینجا صدا زده می‌شود
-  })
-  .catch((error) => {
-    console.error("Header:", error);
-  });
 
 
 // ================== Footer ==================
