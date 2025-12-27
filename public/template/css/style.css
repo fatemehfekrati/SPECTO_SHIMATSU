@@ -11936,3 +11936,19 @@
     width: 100% !important;
   }
 }
+
+.text-Pro{
+  display: flex;
+  flex-wrap: wrap;          
+  justify-content: center;
+  margin-bottom: 10px;
+  align-items: center;
+  gap: 4px;                
+  font-size: clamp(16px, 2.2vw, 20px); 
+}
+
+.text-Pro .brand{
+  color: red;
+  font-weight: 600;
+  white-space: nowrap;      
+}
