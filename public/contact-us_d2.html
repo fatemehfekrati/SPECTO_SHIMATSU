@@ -127,43 +127,44 @@
   </section>
 
   <!-- Contact Form -->
-  <div class="contact-wrapper">
-    <div class="contact-form-box">
-      <h2>Leave A Message</h2>
+ <div class="contact-wrapper">
+  <div class="contact-form-box">
+    <h2>Leave A Message</h2>
 
-      <form action="/send" method="POST">
+    <form action="send.php" method="POST">
 
-        <label>Your Name*</label>
-        <input type="text" name="name" required>
+      <label>Your Name*</label>
+      <input type="text" name="name" required>
 
-        <label>Your Email*</label>
-        <input type="email" name="email" required>
+      <label>Your Email*</label>
+      <input type="email" name="email" required>
 
-        <label>Phone Number</label>
-<input 
-  type="text" 
-  name="phone" 
-  required
-  oninput="this.value = this.value.replace(/[^0-9]/g, '');"
->
+      <label>Phone Number</label>
+      <input 
+        type="text" 
+        name="phone" 
+        required
+        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      >
 
+      <label>Industry*</label>
+      <select name="industry" required>
+        <option value="">Select Industry</option>
+        <option value="Metallography">Metallography</option>
+        <option value="Mining">Mining</option>
+        <option value="Academic">Academic</option>
+        <option value="Environmental">Environmental</option>
+      </select>
 
-        <label>Industry*</label>
-        <select name="industry" required>
-          <option value="Select Industry">Select Industry</option>
-          <option value="Alloy – Scrap"><a href="Metallography.html">Metallography</a></option>
-          <option value="Alloy – NDT/PMI"><a href="mining_n20.html">Mining</a></option>
-          <option value="RoHS / Restricted"><a href="Academic">Academic</a></option>
-          <option value="Academic"><a href="Environmental.html">Environmental</a></option>
-        </select>
+      <label>Message*</label>
+      <textarea name="message" class="message-box" required></textarea>
 
-        <label>Message*</label>
-        <textarea name="message" class="message-box" required></textarea>
+      <button type="submit">Send</button>
+    </form>
 
-        <button type="submit">Send</button>
-      </form>
-    </div>
   </div>
+</div>
+
 
   <!-- Footer -->
   <div id="Footer_Main"></div>
